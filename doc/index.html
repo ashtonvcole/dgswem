@@ -1,0 +1,167 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Documentation for DGSWEM Documentation">
+    <meta name="author" content="Ashton Cole" >
+    <link rel="icon" href="./favicon.png">
+
+    <title> DGSWEM Documentation </title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="./css/fontawesome.min.css" rel="stylesheet">
+    <link href="./css/brands.min.css" rel="stylesheet">
+    <link href="./css/regular.min.css" rel="stylesheet">
+    <link href="./css/solid.min.css" rel="stylesheet">
+    <link href="./css/v4-font-face.min.css" rel="stylesheet">
+    <link href="./css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="./css/local.css" rel="stylesheet">
+    <link href="./css/pygments.css" rel="stylesheet">
+    <script src="./js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html">DGSWEM Documentation </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="./lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./program/dgswem.html">Program</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="./search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <!-- Main component for a primary marketing message or call to action -->
+
+      <div class="row" id='text'>
+        <div class=col-md-8>
+          <h1>DGSWEM Documentation</h1>
+          <p>Welcome to DGSWEM!</p>
+<p>We are under construction! Expect more soon!</p>
+        </div>
+          <div class="col-md-4">
+            <div class="card card-body bg-light">
+              <h2 class="card-title">Developer Info</h2>
+              <h4 class="card-text">Ashton Cole</h4>
+              <p class="card-text"></p>
+            </div>
+          </div>
+      </div>
+        <div class="row">
+          <hr>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Source Files</h3>
+              <ul><li><a href='sourcefile/c_interface.f90.html'>c_interface.F90</a></li><li><a href='sourcefile/calc_normal.f.html'>calc_normal.F</a></li><li><a href='sourcefile/count_edges.cpp.html'>count_edges.cpp</a></li><li><a href='sourcefile/couple2swan.f.html'>couple2swan.F</a></li><li><a href='sourcefile/create_edge_data.f.html'>create_edge_data.F</a></li><li><a href='sourcefile/cstart.f.html'>cstart.F</a></li><li><a href='sourcefile/detector.f.html'>detector.F</a></li><li><a href='sourcefile/dg.f.html'>dg.F</a></li><li><a href='sourcefile/dg_hydro_timestep.f.html'>DG_hydro_timestep.F</a></li><li><a href='sourcefile/dg_timestep.f.html'>DG_timestep.F</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/files.html"><em>All source files&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Modules</h3>
+              <ul><li><a href='module/c_interface.html'>c_interface</a></li><li><a href='module/couple2swan.html'>Couple2Swan</a></li><li><a href='module/dg.html'>DG</a></li><li><a href='module/diff45_41.html'>DIFF45_41</a></li><li><a href='module/fort_dg.html'>FORT_DG</a></li><li><a href='module/fparser.html'>fparser</a></li><li><a href='module/fparser2.html'>fparser2</a></li><li><a href='module/global.html'>GLOBAL</a></li><li><a href='module/global_3dvs.html'>GLOBAL_3DVS</a></li><li><a href='module/global_io.html'>global_io</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/modules.html"><em>All modules&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Procedures</h3>
+              <ul><li><a href='proc/add_internal_flux.html'>add_internal_flux</a></li><li><a href='proc/alloc_3dvs.html'>ALLOC_3DVS</a></li><li><a href='proc/alloc_area_gauss.html'>ALLOC_AREA_GAUSS</a></li><li><a href='proc/alloc_dg1.html'>ALLOC_DG1</a></li><li><a href='proc/alloc_dg2.html'>ALLOC_DG2</a></li><li><a href='proc/alloc_dg3.html'>ALLOC_DG3</a></li><li><a href='proc/alloc_dg4.html'>ALLOC_DG4</a></li><li><a href='proc/alloc_dg_wetdry.html'>ALLOC_DG_WETDRY</a></li><li><a href='proc/alloc_edge_gauss.html'>ALLOC_EDGE_GAUSS</a></li><li><a href='proc/alloc_edges0.html'>ALLOC_EDGES0</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/procedures.html"><em>All procedures&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Derived Types</h3>
+              <ul><li><a href='type/key_val.html'>key_val</a></li><li><a href='type/outputdatadescript_t.html'>OutputDataDescript_t</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/types.html"><em>All derived types&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              DGSWEM Documentation
+ was developed by Ashton Cole<br>              &copy; 2026 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,2402 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Documentation for DGSWEM Documentation">
+    <meta name="author" content="Ashton Cole" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>HARM &ndash; DGSWEM Documentation</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">DGSWEM Documentation </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../program/dgswem.html">Program</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>HARM
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 8.8% of total for modules and submodules.">989 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/harm.F"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/harm.f.html'>harm.F</a></li>
+            <li class="breadcrumb-item active" aria-current="page">HARM</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/harm.html#variable-nfreq">NFREQ</a>
+            <a class="list-group-item" href="../module/harm.html#variable-namefr">NAMEFR</a>
+            <a class="list-group-item" href="../module/harm.html#variable-hafreq">HAFREQ</a>
+            <a class="list-group-item" href="../module/harm.html#variable-haff">HAFF</a>
+            <a class="list-group-item" href="../module/harm.html#variable-haface">HAFACE</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/harm.html#proc-alloc_ha">ALLOC_HA</a>
+            <a class="list-group-item" href="../module/harm.html#proc-lsqupdlhs">LSQUPDLHS</a>
+            <a class="list-group-item" href="../module/harm.html#proc-lsqupdes">LSQUPDES</a>
+            <a class="list-group-item" href="../module/harm.html#proc-lsqupdvs">LSQUPDVS</a>
+            <a class="list-group-item" href="../module/harm.html#proc-lsqupdeg">LSQUPDEG</a>
+            <a class="list-group-item" href="../module/harm.html#proc-lsqupdvg">LSQUPDVG</a>
+            <a class="list-group-item" href="../module/harm.html#proc-fulsol">fulsol</a>
+            <a class="list-group-item" href="../module/harm.html#proc-lsqsoles">LSQSOLES</a>
+            <a class="list-group-item" href="../module/harm.html#proc-lsqsolvs">LSQSOLVS</a>
+            <a class="list-group-item" href="../module/harm.html#proc-lsqsoleg">LSQSOLEG</a>
+            <a class="list-group-item" href="../module/harm.html#proc-lsqsolvg">LSQSOLVG</a>
+            <a class="list-group-item" href="../module/harm.html#proc-hacolds">HACOLDS</a>
+            <a class="list-group-item" href="../module/harm.html#proc-hacoldseg">HACOLDSEG</a>
+            <a class="list-group-item" href="../module/harm.html#proc-hacoldses">HACOLDSES</a>
+            <a class="list-group-item" href="../module/harm.html#proc-hacoldsvg">HACOLDSVG</a>
+            <a class="list-group-item" href="../module/harm.html#proc-hacoldsvs">HACOLDSVS</a>
+            <a class="list-group-item" href="../module/harm.html#proc-hahots">HAHOTS</a>
+            <a class="list-group-item" href="../module/harm.html#proc-hahotseg">HAHOTSEG</a>
+            <a class="list-group-item" href="../module/harm.html#proc-hahotses">HAHOTSES</a>
+            <a class="list-group-item" href="../module/harm.html#proc-hahotsvg">HAHOTSVG</a>
+            <a class="list-group-item" href="../module/harm.html#proc-hahotsvs">HAHOTSVS</a>
+            <a class="list-group-item" href="../module/harm.html#proc-hahout">HAHOUT</a>
+            <a class="list-group-item" href="../module/harm.html#proc-hahouteg">HAHOUTEG</a>
+            <a class="list-group-item" href="../module/harm.html#proc-hahoutes">HAHOUTES</a>
+            <a class="list-group-item" href="../module/harm.html#proc-hahoutvg">HAHOUTVG</a>
+            <a class="list-group-item" href="../module/harm.html#proc-hahoutvs">HAHOUTVS</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      <hr>
+<p>Subroutine to update the Left Hand Side Matrix                     *
+                                                                      *
+  TIME  - ABSOLUTE MODEL TIME (SEC)                                   *
+  IT    - MODEL TIME STEP                                             *
+  icall - number of times the subroutine has been called              *
+  a     - Left Hand Side Matrix                                       *
+                                                                      *
+                        RL 11/7/95                                    *</p>
+<hr>
+<hr>
+<p>Subroutine to update the Right Hand Side Load Vectors for the      *
+   elevation station harmonic analysis.                               *
+                                                                      *
+  STAE  - STATION ELEVATION VALUES USED TO UPDATE LOAD VECTORS        *
+  NSTAE - NUMBER OF TIDAL ELEVATION RECORDING STATIONS                *
+                                                                      *
+  STAELV - station elevation load vector                              *
+                                                                      *
+                        RL 11/8/95                                    *</p>
+<hr>
+<hr>
+<p>Subroutine to update the Right Hand Side Load Vectors for the      *
+   velocity station harmonic analysis.                                *
+                                                                      *
+  STAU  - STATION U VELOCITY VALUES USED TO UPDATE LOAD VECTORS       *
+  STAV  - STATION V VELOCITY VALUES USED TO UPDATE LOAD VECTORS       *
+  NSTAV - NUMBER OF TIDAL CURRENT RECORDING STATIONS                  *
+                                                                      *
+  STAULV - station u velocity load vector                             *
+  STAVLV - station v velocity load vector                             *
+                                                                      *
+                        RL 11/8/95                                    *</p>
+<hr>
+<hr>
+<p>Subroutine to update the Right Hand Side Load Vectors for the      *
+   global elevation harmonic analysis.                                *
+                                                                      *
+  GLOE  - GLOBAL ELEVATION VALUES USED TO UPDATE LOAD VECTORS         *
+  NP    - NUMBER OF POINTS IN GLOBAL GRID                             *
+                                                                      *
+  GLOELV - global elevation load vector                               *
+                                                                      *
+                        RL 11/8/95                                    *</p>
+<hr>
+<hr>
+<p>Subroutine to update the Right Hand Side Load Vectors for the      *
+   global velocity harmonic analysis.                                 *
+                                                                      *
+  GLOU  - GLOBAL U VELOCITY VALUES USED TO UPDATE LOAD VECTORS        *
+  GLOV  - GLOBAL V VELOCITY VALUES USED TO UPDATE LOAD VECTORS        *
+  NP    - NUMBER OF POINTS IN GLOBAL GRID                             *
+                                                                      *
+  GLOULV - global u velocity load vector                              *
+  GLOVLV - global v velocity load vector                              *
+                                                                      *
+                        RL 11/8/95                                    *</p>
+<hr>
+<hr>
+<p>Subroutine to fill out, decompose and solve the lsq system         *
+   Solves system a<em>x=b by l</em>d*l(tr) decomp in full storage mode       *
+                                                                      *
+   NOTE: This routine has been modified so that the filling out and   *
+         decomposition (and only those operations) are done if        *
+         idecom=0.                                                    *
+                                                                      *
+   mm  -  actual dimension of a matrix                                *
+                                                                      *
+                        rl 11/7/95                                    *</p>
+<hr>
+<hr>
+<p>Subroutine to solve the system and write output for elevation      *
+   stations.                                                          *
+                                                                      *
+   nf=0  if no steady constituent                                     *
+   nf=1 if steady constituent                                         *
+                                                                      *
+                        R.L. 11/8/95                                  *</p>
+<hr>
+<hr>
+<p>Subroutine to solve the system and write output for velocity       *
+   stations.                                                          *
+                                                                      *
+   nf=0  if no steady constituent                                     *
+   nf=1  if steady constituent                                        *
+                                                                      *
+                        R.L. 11/8/95                                  *</p>
+<hr>
+<hr>
+<p>Subroutine to solve the system and write output for elevation      *
+   globally.                                                          *
+                                                                      *
+   nf=0  if no steady constituent                                     *
+   nf=1  if steady constituent                                        *
+                                                                      *
+                        R.L. 11/8/95                                  *</p>
+<hr>
+<hr>
+<p>Subroutine to solve the system and write output for velocity       *
+   globally.                                                          *
+                                                                      *
+   nf=0  if no steady constituent                                     *
+   nf=1  if steady constituent                                        *
+                                                                      *
+                        R.L. 11/10/95                                 *</p>
+<hr>
+<hr>
+<p>Subroutine to initialize parameters for harmonic analysis with a   *
+   cold start.                                                        *
+                                                                      *
+                        R.L.  11/9/95                                 *</p>
+<hr>
+<hr>
+<p>Subroutine to initialize global elevation load vectors for         *
+   harmonic analysis with a cold start.                               *
+                                                                      *
+                        R.L.  11/9/95                                 *</p>
+<hr>
+<hr>
+<p>Subroutine to initialize elevation station load vectors for        *
+   harmonic analysis with a cold start.                               *
+                                                                      *
+                        R.L.  11/9/95                                 *</p>
+<hr>
+<hr>
+<p>Subroutine to initialize global velocity load vectors for          *
+   harmonic analysis with a cold start.                               *
+                                                                      *
+                        R.L.  11/9/95                                 *</p>
+<hr>
+<hr>
+<p>Subroutine to initialize elevation station load vectors for        *
+   harmonic analysis with a cold start.                               *
+                                                                      *
+                        R.L.  11/9/95                                 *</p>
+<hr>
+<hr>
+<p>Subroutine to read in and initialize harmonic analysis for a hot   *
+   start.                                                             *
+                                                                      *
+   Checks are made to ensure agreement between values read in from    *
+   the hotstart file and values read in from the UNIT 15 file.        *
+                                                                      *
+                        R.L. 11/9/95                                  *</p>
+<hr>
+<hr>
+<p>Subroutine to read in and initialize the global elevation load     *
+   vector for harmonic analysis with a hot start.                     *
+                                                                      *
+                        R.L. 11/9/95                                  *</p>
+<hr>
+<hr>
+<p>Subroutine to read in and initialize the elevation station load    *
+   vector for harmonic analysis with a hot start.                     *
+                                                                      *
+                        R.L. 11/9/95                                  *</p>
+<hr>
+<hr>
+<p>Subroutine to read in and initialize the global velocity load      *
+   vector for harmonic analysis with a hot start.                     *
+                                                                      *
+                        R.L. 11/9/95                                  *</p>
+<hr>
+<hr>
+<p>Subroutine to read in and initialize the velocity station load     *
+   vector for harmonic analysis with a hot start.                     *
+                                                                      *
+                        R.L. 11/9/95                                  *</p>
+<hr>
+<hr>
+<p>Subroutine to write out to the hotstart file (UNITS 67 and 68)     *
+   header information and the LHS matrix for the harmonic analysis    *
+                                                                      *
+                        R.L.  11/8/95                                 *</p>
+<hr>
+<hr>
+<p>Subroutine to write global elevation harmonic analysis RHS load    *
+   vector to a hot start file (UNITS 67 and 68)                       *
+                                                                      *
+                        R.L.  11/8/95                                 *</p>
+<hr>
+<hr>
+<p>Subroutine to write elevation station harmonic analysis RHS load   *
+   vector to a hot start file (UNITS 67 and 68)                       *
+                                                                      *
+                        R.L.  11/8/95                                 *</p>
+<hr>
+<hr>
+<p>Subroutine to write global velocity harmonic analysis RHS load     *
+   vector to a hot start file (UNITS 67 and 68)                       *
+                                                                      *
+                        R.L.  11/8/95                                 *</p>
+<hr>
+<hr>
+<p>Subroutine to write velocity station harmonic analysis RHS load    *
+   vector to a hot start file (UNITS 67 and 68)                       *
+                                                                      *
+                        R.L.  11/8/95                                 *</p>
+<hr>
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='sizes.html'>SIZES</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      
+      <br>
+
+
+        <section>
+          <h2>Variables</h2>
+            <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nfreq"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NFREQ</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-namefr"></span>
+              character(len=10),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>NAMEFR</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hafreq"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>HAFREQ</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-haff"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>HAFF</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-haface"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>HAFACE</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+        </section>
+        <br>
+
+
+
+
+
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-alloc_ha"></span> <h3>public  subroutine <a href='../proc/alloc_ha.html'>ALLOC_HA</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Allocate arays used by LSQ_HARM.</p><a href="../proc/alloc_ha.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+    <em>None</em>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-lsqupdlhs"></span> <h3>public  subroutine <a href='../proc/lsqupdlhs.html'>LSQUPDLHS</a>(TIME, IT)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>**** Update the Left Hand Side Matrix
+  Note: this is a symmetric matrix and therefore only store
+  the upper triangular part.  The lower part will be
+  filled out in SUBROUTINE FULSOL prior to the matrix's decomposition</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-time~3"></span>
+              real(kind=sz)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>TIME</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-it~17"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IT</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-lsqupdes"></span> <h3>public  subroutine <a href='../proc/lsqupdes.html'>LSQUPDES</a>(STAE, NSTAE)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-stae"></span>
+              real(kind=SZ)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>STAE</strong>(MNSTAE)</td>
+            <td>
+<p>**** Update the Right Hand Side Load Vectors</p><a href="../proc/lsqupdes.html#variable-stae" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nstae~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSTAE</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-lsqupdvs"></span> <h3>public  subroutine <a href='../proc/lsqupdvs.html'>LSQUPDVS</a>(STAU, STAV, NSTAV)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-stau"></span>
+              real(kind=SZ)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>STAU</strong>(MNSTAV)</td>
+            <td>
+<p>**** Update the Right Hand Side Load Vectors</p><a href="../proc/lsqupdvs.html#variable-stau" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-stav"></span>
+              real(kind=SZ)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>STAV</strong>(MNSTAV)</td>
+            <td>
+<p>**** Update the Right Hand Side Load Vectors</p><a href="../proc/lsqupdvs.html#variable-stav" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nstav~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSTAV</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-lsqupdeg"></span> <h3>public  subroutine <a href='../proc/lsqupdeg.html'>LSQUPDEG</a>(GLOE, NP)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-gloe"></span>
+              real(kind=SZ)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>GLOE</strong>(MNP)</td>
+            <td>
+<p>**** Update the Right Hand Side Load Vectors</p><a href="../proc/lsqupdeg.html#variable-gloe" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-np~21"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NP</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-lsqupdvg"></span> <h3>public  subroutine <a href='../proc/lsqupdvg.html'>LSQUPDVG</a>(GLOU, GLOV, NP)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-glou"></span>
+              real(kind=SZ)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>GLOU</strong>(MNP)</td>
+            <td>
+<p>**** Update the Right Hand Side Load Vectors</p><a href="../proc/lsqupdvg.html#variable-glou" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-glov"></span>
+              real(kind=SZ)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>GLOV</strong>(MNP)</td>
+            <td>
+<p>**** Update the Right Hand Side Load Vectors</p><a href="../proc/lsqupdvg.html#variable-glov" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-np~22"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NP</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-fulsol"></span> <h3>public  subroutine <a href='../proc/fulsol.html'>fulsol</a>(idecom)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-idecom"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>idecom</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-lsqsoles"></span> <h3>public  subroutine <a href='../proc/lsqsoles.html'>LSQSOLES</a>(NSTAE, DIRNAME, LNAME)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>*** Open elevation station harmonic output file and write header information</p><a href="../proc/lsqsoles.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nstae~3"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSTAE</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dirname~2"></span>
+              character(len=6)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DIRNAME</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lname~3"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LNAME</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-lsqsolvs"></span> <h3>public  subroutine <a href='../proc/lsqsolvs.html'>LSQSOLVS</a>(NSTAV, DIRNAME, LNAME)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>*** Open velocity station harmonic output file and write header information</p><a href="../proc/lsqsolvs.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nstav~3"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSTAV</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dirname~3"></span>
+              character(len=6)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DIRNAME</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lname~4"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LNAME</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-lsqsoleg"></span> <h3>public  subroutine <a href='../proc/lsqsoleg.html'>LSQSOLEG</a>(NP, DIRNAME, LNAME, ELAV, ELVA)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>*** Open velocity station harmonic output file and write header information</p><a href="../proc/lsqsoleg.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-np~23"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NP</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dirname~4"></span>
+              character(len=6)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DIRNAME</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lname~5"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LNAME</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-elav~2"></span>
+              real(kind=SZ)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ELAV</strong>(MNP)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-elva~2"></span>
+              real(kind=SZ)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ELVA</strong>(MNP)</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-lsqsolvg"></span> <h3>public  subroutine <a href='../proc/lsqsolvg.html'>LSQSOLVG</a>(NP, DIRNAME, LNAME, XVELAV, YVELAV, XVELVA, YVELVA)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>*** Open velocity station harmonic output file and write header information</p><a href="../proc/lsqsolvg.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-np~24"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NP</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dirname~5"></span>
+              character(len=6)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DIRNAME</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lname~6"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LNAME</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xvelav~2"></span>
+              real(kind=SZ)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>XVELAV</strong>(MNP)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-yvelav~2"></span>
+              real(kind=SZ)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>YVELAV</strong>(MNP)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xvelva~2"></span>
+              real(kind=SZ)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>XVELVA</strong>(MNP)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-yvelva~2"></span>
+              real(kind=SZ)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>YVELVA</strong>(MNP)</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-hacolds"></span> <h3>public  subroutine <a href='../proc/hacolds.html'>HACOLDS</a>(HAFREQ)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hafreq~2"></span>
+              real(kind=SZ)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>HAFREQ</strong>(MNHARF)</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-hacoldseg"></span> <h3>public  subroutine <a href='../proc/hacoldseg.html'>HACOLDSEG</a>(NP)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-np~25"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NP</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-hacoldses"></span> <h3>public  subroutine <a href='../proc/hacoldses.html'>HACOLDSES</a>(NSTAE)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nstae~4"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSTAE</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-hacoldsvg"></span> <h3>public  subroutine <a href='../proc/hacoldsvg.html'>HACOLDSVG</a>(NP)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-np~26"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NP</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-hacoldsvs"></span> <h3>public  subroutine <a href='../proc/hacoldsvs.html'>HACOLDSVS</a>(NSTAV)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nstav~4"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSTAV</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-hahots"></span> <h3>public  subroutine <a href='../proc/hahots.html'>HAHOTS</a>(NSTAE, NSTAV, NP, ISTAE, ISTAV, IGLOE, IGLOV, NSCREEN, IHOTSTP, IHOT, MYPROC)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>**** Compute parameter values for checking</p><a href="../proc/hahots.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nstae~5"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSTAE</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nstav~5"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSTAV</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-np~27"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NP</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-istae"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ISTAE</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-istav"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ISTAV</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-igloe"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IGLOE</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iglov"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IGLOV</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nscreen~4"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSCREEN</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihotstp~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IHOTSTP</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihot~3"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IHOT</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-myproc~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>MYPROC</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-hahotseg"></span> <h3>public  subroutine <a href='../proc/hahotseg.html'>HAHOTSEG</a>(np, ihotstp, ihot)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-np~4"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>np</strong></td>
+            <td>
+<p>**** Read in Global Elevation LHS load vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihotstp"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ihotstp</strong></td>
+            <td>
+<p>**** Read in Global Elevation LHS load vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihot"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ihot</strong></td>
+            <td>
+<p>**** Read in Global Elevation LHS load vector</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-hahotses"></span> <h3>public  subroutine <a href='../proc/hahotses.html'>HAHOTSES</a>(NSTAE, IHOTSTP, IHOT)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nstae~6"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSTAE</strong></td>
+            <td>
+<p>**** Read in Station Elevation LHS load vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihotstp~3"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IHOTSTP</strong></td>
+            <td>
+<p>**** Read in Station Elevation LHS load vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihot~4"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IHOT</strong></td>
+            <td>
+<p>**** Read in Station Elevation LHS load vector</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-hahotsvg"></span> <h3>public  subroutine <a href='../proc/hahotsvg.html'>HAHOTSVG</a>(np, ihotstp, ihot)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-np~5"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>np</strong></td>
+            <td>
+<p>**** Read in Global Velocity LHS load vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihotstp~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ihotstp</strong></td>
+            <td>
+<p>**** Read in Global Velocity LHS load vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihot~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ihot</strong></td>
+            <td>
+<p>**** Read in Global Velocity LHS load vector</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-hahotsvs"></span> <h3>public  subroutine <a href='../proc/hahotsvs.html'>HAHOTSVS</a>(NSTAV, IHOTSTP, IHOT)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nstav~6"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSTAV</strong></td>
+            <td>
+<p>**** Read in Station Velocity LHS load vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihotstp~4"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IHOTSTP</strong></td>
+            <td>
+<p>**** Read in Station Velocity LHS load vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihot~5"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IHOT</strong></td>
+            <td>
+<p>**** Read in Station Velocity LHS load vector</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-hahout"></span> <h3>public  subroutine <a href='../proc/hahout.html'>HAHOUT</a>(NP, NSTAE, NSTAV, ISTAE, ISTAV, IGLOE, IGLOV, IOUNIT, IHOTSTP)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>**** Write Out various parameter values</p><a href="../proc/hahout.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-np~28"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NP</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nstae~7"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSTAE</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nstav~7"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSTAV</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-istae~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ISTAE</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-istav~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ISTAV</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-igloe~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IGLOE</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iglov~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IGLOV</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iounit"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IOUNIT</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihotstp~5"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IHOTSTP</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-hahouteg"></span> <h3>public  subroutine <a href='../proc/hahouteg.html'>HAHOUTEG</a>(NP, IOUNIT, IHOTSTP)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-np~29"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NP</strong></td>
+            <td>
+<p>**** Write Out Global Elevation RHS load vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iounit~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IOUNIT</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihotstp~6"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IHOTSTP</strong></td>
+            <td>
+<p>**** Write Out Global Elevation RHS load vector</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-hahoutes"></span> <h3>public  subroutine <a href='../proc/hahoutes.html'>HAHOUTES</a>(NSTAE, IOUNIT, IHOTSTP)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nstae~8"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSTAE</strong></td>
+            <td>
+<p>**** Write Out Station Elevation RHS load vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iounit~3"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IOUNIT</strong></td>
+            <td>
+<p>**** Write Out Station Elevation RHS load vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihotstp~7"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IHOTSTP</strong></td>
+            <td>
+<p>**** Write Out Station Elevation RHS load vector</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-hahoutvg"></span> <h3>public  subroutine <a href='../proc/hahoutvg.html'>HAHOUTVG</a>(NP, IOUNIT, IHOTSTP)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-np~30"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NP</strong></td>
+            <td>
+<p>**** Write Out Global Velocity RHS load vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iounit~4"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IOUNIT</strong></td>
+            <td>
+<p>**** Write Out Global Velocity RHS load vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihotstp~8"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IHOTSTP</strong></td>
+            <td>
+<p>**** Write Out Global Velocity RHS load vector</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-hahoutvs"></span> <h3>public  subroutine <a href='../proc/hahoutvs.html'>HAHOUTVS</a>(NSTAV, IOUNIT, IHOTSTP)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nstav~8"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSTAV</strong></td>
+            <td>
+<p>**** Write Out Station Velocity LHS load vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iounit~5"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IOUNIT</strong></td>
+            <td>
+<p>**** Write Out Station Velocity LHS load vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihotstp~9"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IHOTSTP</strong></td>
+            <td>
+<p>**** Write Out Station Velocity LHS load vector</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              DGSWEM Documentation
+ was developed by Ashton Cole<br>              &copy; 2026 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

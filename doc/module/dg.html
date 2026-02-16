@@ -1,0 +1,6644 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Documentation for DGSWEM Documentation">
+    <meta name="author" content="Ashton Cole" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>DG &ndash; DGSWEM Documentation</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">DGSWEM Documentation </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../program/dgswem.html">Program</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>DG
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 2.7% of total for modules and submodules.">297 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/dg.F"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/dg.f.html'>dg.F</a></li>
+            <li class="breadcrumb-item active" aria-current="page">DG</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/dg.html#variable-rainfall">rainfall</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dgflag">DGFLAG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dghot">DGHOT</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dghotspool">DGHOTSPOOL</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dof~2">DOF</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dofh">dofh</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dofl">dofl</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dofx">dofx</a>
+            <a class="list-group-item" href="../module/dg.html#variable-el~3">EL</a>
+            <a class="list-group-item" href="../module/dg.html#variable-mnes">MNES</a>
+            <a class="list-group-item" href="../module/dg.html#variable-artdif">artdif</a>
+            <a class="list-group-item" href="../module/dg.html#variable-tune_by_hand">tune_by_hand</a>
+            <a class="list-group-item" href="../module/dg.html#variable-irk">IRK</a>
+            <a class="list-group-item" href="../module/dg.html#variable-j1">J1</a>
+            <a class="list-group-item" href="../module/dg.html#variable-j2">J2</a>
+            <a class="list-group-item" href="../module/dg.html#variable-j3">J3</a>
+            <a class="list-group-item" href="../module/dg.html#variable-negp_fixed">negp_fixed</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nagp_fixed">nagp_fixed</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nagp">NAGP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ncheck">NCHECK</a>
+            <a class="list-group-item" href="../module/dg.html#variable-negp">NEGP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nedges">NEDGES</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nrk">NRK</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nieds">NIEDS</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nleds">NLEDS</a>
+            <a class="list-group-item" href="../module/dg.html#variable-needs">NEEDS</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nfeds">NFEDS</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nreds">NREDS</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nebeds">NEBEDS</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nibeds">NIBEDS</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nibseg">NIBSEG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nebseg">NEBSEG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-mned">MNED</a>
+            <a class="list-group-item" href="../module/dg.html#variable-mnled">MNLED</a>
+            <a class="list-group-item" href="../module/dg.html#variable-mnsed">MNSED</a>
+            <a class="list-group-item" href="../module/dg.html#variable-mnraed">MNRAED</a>
+            <a class="list-group-item" href="../module/dg.html#variable-mnried">MNRIED</a>
+            <a class="list-group-item" href="../module/dg.html#variable-modal_ic">MODAL_IC</a>
+            <a class="list-group-item" href="../module/dg.html#variable-p_read">P_READ</a>
+            <a class="list-group-item" href="../module/dg.html#variable-p_read2">P_READ2</a>
+            <a class="list-group-item" href="../module/dg.html#variable-slopeflag">SLOPEFLAG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-test_el">test_el</a>
+            <a class="list-group-item" href="../module/dg.html#variable-fluxtype">FLUXTYPE</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rk_stage">RK_STAGE</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rk_order">RK_ORDER</a>
+            <a class="list-group-item" href="../module/dg.html#variable-padapt">padapt</a>
+            <a class="list-group-item" href="../module/dg.html#variable-pflag">pflag</a>
+            <a class="list-group-item" href="../module/dg.html#variable-pl~2">pl</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ph">ph</a>
+            <a class="list-group-item" href="../module/dg.html#variable-px">px</a>
+            <a class="list-group-item" href="../module/dg.html#variable-lebesguep">lebesgueP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-gflag">gflag</a>
+            <a class="list-group-item" href="../module/dg.html#variable-pa~4">pa</a>
+            <a class="list-group-item" href="../module/dg.html#variable-init_parser">init_parser</a>
+            <a class="list-group-item" href="../module/dg.html#variable-stblzr">stblzr</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iwrite">iwrite</a>
+            <a class="list-group-item" href="../module/dg.html#variable-c13">C13</a>
+            <a class="list-group-item" href="../module/dg.html#variable-c16">C16</a>
+            <a class="list-group-item" href="../module/dg.html#variable-diorism">diorism</a>
+            <a class="list-group-item" href="../module/dg.html#variable-porosity">porosity</a>
+            <a class="list-group-item" href="../module/dg.html#variable-sevdm">SEVDM</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dot">DOT</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dhb_x">DHB_X</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dhb_y">DHB_Y</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dphidx">DPHIDX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dphidy">DPHIDY</a>
+            <a class="list-group-item" href="../module/dg.html#variable-slimit">slimit</a>
+            <a class="list-group-item" href="../module/dg.html#variable-plimit">plimit</a>
+            <a class="list-group-item" href="../module/dg.html#variable-pflag2con1">pflag2con1</a>
+            <a class="list-group-item" href="../module/dg.html#variable-pflag2con2">pflag2con2</a>
+            <a class="list-group-item" href="../module/dg.html#variable-efa_gp">EFA_GP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-emo_gp">EMO_GP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-slimit1">slimit1</a>
+            <a class="list-group-item" href="../module/dg.html#variable-slimit2">slimit2</a>
+            <a class="list-group-item" href="../module/dg.html#variable-slimit3">slimit3</a>
+            <a class="list-group-item" href="../module/dg.html#variable-el_ang">EL_ANG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-slimit4">slimit4</a>
+            <a class="list-group-item" href="../module/dg.html#variable-bg_dif">bg_dif</a>
+            <a class="list-group-item" href="../module/dg.html#variable-trc_dif">trc_dif</a>
+            <a class="list-group-item" href="../module/dg.html#variable-slimit5">slimit5</a>
+            <a class="list-group-item" href="../module/dg.html#variable-fg_l">FG_L</a>
+            <a class="list-group-item" href="../module/dg.html#variable-l2er_global">l2er_global</a>
+            <a class="list-group-item" href="../module/dg.html#variable-temperg">temperg</a>
+            <a class="list-group-item" href="../module/dg.html#variable-slope_weight">slope_weight</a>
+            <a class="list-group-item" href="../module/dg.html#variable-h_tri">H_TRI</a>
+            <a class="list-group-item" href="../module/dg.html#variable-mag1">MAG1</a>
+            <a class="list-group-item" href="../module/dg.html#variable-mag2">MAG2</a>
+            <a class="list-group-item" href="../module/dg.html#variable-kappa">kappa</a>
+            <a class="list-group-item" href="../module/dg.html#variable-s0">s0</a>
+            <a class="list-group-item" href="../module/dg.html#variable-uniform_dif">uniform_dif</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rampdg">RAMPDG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-s1">S1</a>
+            <a class="list-group-item" href="../module/dg.html#variable-s2">S2</a>
+            <a class="list-group-item" href="../module/dg.html#variable-sav">SAV</a>
+            <a class="list-group-item" href="../module/dg.html#variable-source_x">SOURCE_X</a>
+            <a class="list-group-item" href="../module/dg.html#variable-source_y">SOURCE_Y</a>
+            <a class="list-group-item" href="../module/dg.html#variable-timedg">TIMEDG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-timeh_dg">TIMEH_DG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-tk">TK</a>
+            <a class="list-group-item" href="../module/dg.html#variable-qnam_gp">QNAM_GP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-qnph_gp">QNPH_GP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-sl2_m">SL2_M</a>
+            <a class="list-group-item" href="../module/dg.html#variable-sl2_nyu">SL2_NYU</a>
+            <a class="list-group-item" href="../module/dg.html#variable-sl3_md">SL3_MD</a>
+            <a class="list-group-item" href="../module/dg.html#variable-evmavg">EVMAvg</a>
+            <a class="list-group-item" href="../module/dg.html#variable-sevdmavg">SEVDMAvg</a>
+            <a class="list-group-item" href="../module/dg.html#variable-umag">UMAG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-wsx_gp">WSX_GP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-wsy_gp">WSY_GP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-qmag_in">QMag_IN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-qmag_ex">QMag_EX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-subphi_in">subphi_IN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-subphi_ex">subphi_EX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iota_ex">iota_EX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iota_in">iota_IN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iota2_ex">iota2_EX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iota2_in">iota2_IN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-wdflg">WDFLG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-wdflg_tmp">WDFLG_TMP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dofw">DOFW</a>
+            <a class="list-group-item" href="../module/dg.html#variable-el_updated">EL_UPDATED</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ledge_nvec">LEDGE_NVEC</a>
+            <a class="list-group-item" href="../module/dg.html#variable-varx">varx</a>
+            <a class="list-group-item" href="../module/dg.html#variable-vary">vary</a>
+            <a class="list-group-item" href="../module/dg.html#variable-funcx">funcx</a>
+            <a class="list-group-item" href="../module/dg.html#variable-funcy">funcy</a>
+            <a class="list-group-item" href="../module/dg.html#variable-valx">valx</a>
+            <a class="list-group-item" href="../module/dg.html#variable-valy">valy</a>
+            <a class="list-group-item" href="../module/dg.html#variable-drpsi">DRPSI</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dspsi">DSPSI</a>
+            <a class="list-group-item" href="../module/dg.html#variable-vec1">VEC1</a>
+            <a class="list-group-item" href="../module/dg.html#variable-vec2">VEC2</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dofs">DOFS</a>
+            <a class="list-group-item" href="../module/dg.html#variable-pcount">PCOUNT</a>
+            <a class="list-group-item" href="../module/dg.html#variable-pdg">PDG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ncount">NCOUNT</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nedel">NEDEL</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nedno">NEDNO</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nedsd">NEDSD</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nedno1">NEDNO1</a>
+            <a class="list-group-item" href="../module/dg.html#variable-niedn">NIEDN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nledn">NLEDN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-needn">NEEDN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nfedn">NFEDN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nredn">NREDN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nebedn">NEBEDN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nibedn">NIBEDN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nibsegn">NIBSEGN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nebsegn">NEBSEGN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-el_nbors">EL_NBORS</a>
+            <a class="list-group-item" href="../module/dg.html#variable-backnodes">BACKNODES</a>
+            <a class="list-group-item" href="../module/dg.html#variable-mark">MARK</a>
+            <a class="list-group-item" href="../module/dg.html#variable-atvd">ATVD</a>
+            <a class="list-group-item" href="../module/dg.html#variable-btvd">BTVD</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ctvd">CTVD</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dtvd">DTVD</a>
+            <a class="list-group-item" href="../module/dg.html#variable-max_boa_dt">MAX_BOA_DT</a>
+            <a class="list-group-item" href="../module/dg.html#variable-e1">e1</a>
+            <a class="list-group-item" href="../module/dg.html#variable-balance">balance</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rkc_t">RKC_T</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rkc_u">RKC_U</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rkc_tprime">RKC_Tprime</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rkc_tdprime">RKC_Tdprime</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rkc_a">RKC_a</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rkc_b">RKC_b</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rkc_c">RKC_c</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rkc_mu">RKC_mu</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rkc_tildemu">RKC_tildemu</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rkc_nu">RKC_nu</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rkc_gamma">RKC_gamma</a>
+            <a class="list-group-item" href="../module/dg.html#variable-bath">BATH</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dbathdx">DBATHDX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dbathdy">DBATHDY</a>
+            <a class="list-group-item" href="../module/dg.html#variable-sfac_elem">SFAC_ELEM</a>
+            <a class="list-group-item" href="../module/dg.html#variable-bathed">BATHED</a>
+            <a class="list-group-item" href="../module/dg.html#variable-sfaced">SFACED</a>
+            <a class="list-group-item" href="../module/dg.html#variable-cosnx">COSNX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-sinnx">SINNX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dp_node">DP_NODE</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dp_vol">DP_VOL</a>
+            <a class="list-group-item" href="../module/dg.html#variable-drphi">DRPHI</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dsphi">DSPHI</a>
+            <a class="list-group-item" href="../module/dg.html#variable-drdx">DRDX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dsdx">DSDX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-drdy">DRDY</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dsdy">DSDY</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dxphi2">DXPHI2</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dyphi2">DYPHI2</a>
+            <a class="list-group-item" href="../module/dg.html#variable-phi2~2">PHI2</a>
+            <a class="list-group-item" href="../module/dg.html#variable-efa_dg">EFA_DG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-emo_dg">EMO_DG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ufa_dg">UFA_DG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-umo_dg">UMO_DG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-vfa_dg">VFA_DG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-vmo_dg">VMO_DG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xlen">XLEN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-hb">HB</a>
+            <a class="list-group-item" href="../module/dg.html#variable-mann">MANN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ibht">IBHT</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ebht">EBHT</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ebcfsp">EBCFSP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ibcfsp">IBCFSP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ibcfsb">IBCFSB</a>
+            <a class="list-group-item" href="../module/dg.html#variable-jacobi~2">JACOBI</a>
+            <a class="list-group-item" href="../module/dg.html#variable-m_inv">M_INV</a>
+            <a class="list-group-item" href="../module/dg.html#variable-phi_edge_fixed">phi_edge_fixed</a>
+            <a class="list-group-item" href="../module/dg.html#variable-phi_area">PHI_AREA</a>
+            <a class="list-group-item" href="../module/dg.html#variable-phi_edge">PHI_EDGE</a>
+            <a class="list-group-item" href="../module/dg.html#variable-phi_center">PHI_CENTER</a>
+            <a class="list-group-item" href="../module/dg.html#variable-phi_corner">PHI_CORNER</a>
+            <a class="list-group-item" href="../module/dg.html#variable-phi_check">PHI_CHECK</a>
+            <a class="list-group-item" href="../module/dg.html#variable-phi_corner1">PHI_CORNER1</a>
+            <a class="list-group-item" href="../module/dg.html#variable-phi_mid">PHI_MID</a>
+            <a class="list-group-item" href="../module/dg.html#variable-phi_integrated">PHI_INTEGRATED</a>
+            <a class="list-group-item" href="../module/dg.html#variable-psi_check">PSI_CHECK</a>
+            <a class="list-group-item" href="../module/dg.html#variable-psi1">PSI1</a>
+            <a class="list-group-item" href="../module/dg.html#variable-psi2">PSI2</a>
+            <a class="list-group-item" href="../module/dg.html#variable-psi3">PSI3</a>
+            <a class="list-group-item" href="../module/dg.html#variable-q_hat">Q_HAT</a>
+            <a class="list-group-item" href="../module/dg.html#variable-qib">QIB</a>
+            <a class="list-group-item" href="../module/dg.html#variable-qx">QX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-qy">QY</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ze">ZE</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ze_edge">ze_edge</a>
+            <a class="list-group-item" href="../module/dg.html#variable-qx_edge">qx_edge</a>
+            <a class="list-group-item" href="../module/dg.html#variable-qy_edge">qy_edge</a>
+            <a class="list-group-item" href="../module/dg.html#variable-elem_edge">elem_edge</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nieds_count">nieds_count</a>
+            <a class="list-group-item" href="../module/dg.html#variable-bed">bed</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dynp">dynP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dynp_max">dynP_MAX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dynp_min">dynP_MIN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iota">iota</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iotaa">iotaa</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iota2">iota2</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iota_max">iota_MAX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iota_min">iota_MIN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iotaa2">iotaa2</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iotaa3">iotaa3</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iota2_max">iota2_MAX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iota2_min">iota2_MIN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-arrayfix">arrayfix</a>
+            <a class="list-group-item" href="../module/dg.html#variable-cori_el">CORI_EL</a>
+            <a class="list-group-item" href="../module/dg.html#variable-fric_el">FRIC_EL</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ze_max">ZE_MAX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ze_min">ZE_MIN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dpe_min">DPE_MIN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-water_depth_old">WATER_DEPTH_OLD</a>
+            <a class="list-group-item" href="../module/dg.html#variable-water_depth">WATER_DEPTH</a>
+            <a class="list-group-item" href="../module/dg.html#variable-advectqx">ADVECTQX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-advectqy">ADVECTQY</a>
+            <a class="list-group-item" href="../module/dg.html#variable-sourceqx">SOURCEQX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-sourceqy">SOURCEQY</a>
+            <a class="list-group-item" href="../module/dg.html#variable-lz">LZ</a>
+            <a class="list-group-item" href="../module/dg.html#variable-mz">MZ</a>
+            <a class="list-group-item" href="../module/dg.html#variable-hz">HZ</a>
+            <a class="list-group-item" href="../module/dg.html#variable-tz">TZ</a>
+            <a class="list-group-item" href="../module/dg.html#variable-qnam_dg">QNAM_DG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-qnph_dg">QNPH_DG</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rhs_ze">RHS_ZE</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rhs_bed">RHS_bed</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rhs_qx">RHS_QX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rhs_qy">RHS_QY</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rhs_iota">RHS_iota</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rhs_iota2">RHS_iota2</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rhs_dynp">RHS_dynP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rhs_bed_in">RHS_bed_IN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-rhs_bed_ex">RHS_bed_EX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-bed_hat_o">bed_HAT_O</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xagp">XAGP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-yagp">YAGP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-wagp">WAGP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xegp">XEGP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-yegp">YEGP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-wegp">WEGP</a>
+            <a class="list-group-item" href="../module/dg.html#variable-sl3">SL3</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xbc">XBC</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ybc">YBC</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xfac">XFAC</a>
+            <a class="list-group-item" href="../module/dg.html#variable-yfac">YFAC</a>
+            <a class="list-group-item" href="../module/dg.html#variable-srfac">SRFAC</a>
+            <a class="list-group-item" href="../module/dg.html#variable-edgeq">EDGEQ</a>
+            <a class="list-group-item" href="../module/dg.html#variable-phi~4">PHI</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dphidz1~3">DPHIDZ1</a>
+            <a class="list-group-item" href="../module/dg.html#variable-dphidz2~3">DPHIDZ2</a>
+            <a class="list-group-item" href="../module/dg.html#variable-phi_stae">PHI_STAE</a>
+            <a class="list-group-item" href="../module/dg.html#variable-phi_stav">PHI_STAV</a>
+            <a class="list-group-item" href="../module/dg.html#variable-bed_in">bed_IN</a>
+            <a class="list-group-item" href="../module/dg.html#variable-bed_ex">bed_EX</a>
+            <a class="list-group-item" href="../module/dg.html#variable-bed_hat">bed_HAT</a>
+            <a class="list-group-item" href="../module/dg.html#variable-lim_count">lim_count</a>
+            <a class="list-group-item" href="../module/dg.html#variable-lim_count_roll">lim_count_roll</a>
+            <a class="list-group-item" href="../module/dg.html#variable-fact">fact</a>
+            <a class="list-group-item" href="../module/dg.html#variable-focal_neigh">focal_neigh</a>
+            <a class="list-group-item" href="../module/dg.html#variable-focal_up">focal_up</a>
+            <a class="list-group-item" href="../module/dg.html#variable-bi">bi</a>
+            <a class="list-group-item" href="../module/dg.html#variable-bj~2">bj</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xbcb">XBCb</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ybcb">YBCb</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xi1">xi1</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xi2">xi2</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xtransform">xtransform</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ytransform">ytransform</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xi1bcb">xi1BCb</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xi2bcb">xi2BCb</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xi1vert">xi1vert</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xi2vert">xi2vert</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xtransformv">xtransformv</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ytransformv">ytransformv</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xbcv">XBCv</a>
+            <a class="list-group-item" href="../module/dg.html#variable-ybcv">YBCv</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xi1bcv">xi1BCv</a>
+            <a class="list-group-item" href="../module/dg.html#variable-xi2bcv">xi2BCv</a>
+            <a class="list-group-item" href="../module/dg.html#variable-area_integral">Area_integral</a>
+            <a class="list-group-item" href="../module/dg.html#variable-f">f</a>
+            <a class="list-group-item" href="../module/dg.html#variable-g0">g0</a>
+            <a class="list-group-item" href="../module/dg.html#variable-varsigma0">varsigma0</a>
+            <a class="list-group-item" href="../module/dg.html#variable-fv">fv</a>
+            <a class="list-group-item" href="../module/dg.html#variable-g0v">g0v</a>
+            <a class="list-group-item" href="../module/dg.html#variable-varsigma0v">varsigma0v</a>
+            <a class="list-group-item" href="../module/dg.html#variable-var2sigmag">var2sigmag</a>
+            <a class="list-group-item" href="../module/dg.html#variable-var2sigmav">var2sigmav</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nmatrix">Nmatrix</a>
+            <a class="list-group-item" href="../module/dg.html#variable-nmatrixinv">NmatrixInv</a>
+            <a class="list-group-item" href="../module/dg.html#variable-deltx">deltx</a>
+            <a class="list-group-item" href="../module/dg.html#variable-delty">delty</a>
+            <a class="list-group-item" href="../module/dg.html#variable-pmatrix">pmatrix</a>
+            <a class="list-group-item" href="../module/dg.html#variable-zemin">ZEmin</a>
+            <a class="list-group-item" href="../module/dg.html#variable-zemax">ZEmax</a>
+            <a class="list-group-item" href="../module/dg.html#variable-qxmin">QXmin</a>
+            <a class="list-group-item" href="../module/dg.html#variable-qxmax">QXmax</a>
+            <a class="list-group-item" href="../module/dg.html#variable-qymin">QYmin</a>
+            <a class="list-group-item" href="../module/dg.html#variable-qymax">QYmax</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iotamin">iotamin</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iotamax">iotamax</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iota2min">iota2min</a>
+            <a class="list-group-item" href="../module/dg.html#variable-iota2max">iota2max</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/dg.html#proc-alloc_edges0">ALLOC_EDGES0</a>
+            <a class="list-group-item" href="../module/dg.html#proc-alloc_edges1">ALLOC_EDGES1</a>
+            <a class="list-group-item" href="../module/dg.html#proc-alloc_dg1">ALLOC_DG1</a>
+            <a class="list-group-item" href="../module/dg.html#proc-alloc_dg2">ALLOC_DG2</a>
+            <a class="list-group-item" href="../module/dg.html#proc-alloc_dg3">ALLOC_DG3</a>
+            <a class="list-group-item" href="../module/dg.html#proc-alloc_dg4">ALLOC_DG4</a>
+            <a class="list-group-item" href="../module/dg.html#proc-alloc_rk">ALLOC_RK</a>
+            <a class="list-group-item" href="../module/dg.html#proc-alloc_jacobi">ALLOC_JACOBI</a>
+            <a class="list-group-item" href="../module/dg.html#proc-alloc_area_gauss">ALLOC_AREA_GAUSS</a>
+            <a class="list-group-item" href="../module/dg.html#proc-alloc_edge_gauss">ALLOC_EDGE_GAUSS</a>
+            <a class="list-group-item" href="../module/dg.html#proc-alloc_slopelim">ALLOC_SLOPELIM</a>
+            <a class="list-group-item" href="../module/dg.html#proc-alloc_dg_wetdry">ALLOC_DG_WETDRY</a>
+            <a class="list-group-item" href="../module/dg.html#proc-alloc_stae">ALLOC_STAE</a>
+            <a class="list-group-item" href="../module/dg.html#proc-alloc_stav">ALLOC_STAV</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='sizes.html'>SIZES</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      
+      <br>
+
+
+        <section>
+          <h2>Variables</h2>
+            <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rainfall"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>rainfall</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dgflag"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>DGFLAG</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dghot"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>DGHOT</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dghotspool"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>DGHOTSPOOL</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dof~2"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DOF</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dofh"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dofh</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dofl"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dofl</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dofx"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dofx</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-el~3"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>EL</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mnes"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>MNES</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-artdif"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>artdif</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tune_by_hand"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>tune_by_hand</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-irk"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IRK</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-j1"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>J1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-j2"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>J2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-j3"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>J3</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-negp_fixed"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>negp_fixed</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nagp_fixed"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nagp_fixed</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nagp"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NAGP</strong>(8)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ncheck"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NCHECK</strong>(8)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-negp"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NEGP</strong>(8)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nedges"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NEDGES</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nrk"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NRK</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nieds"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NIEDS</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nleds"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NLEDS</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-needs"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NEEDS</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nfeds"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NFEDS</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nreds"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NREDS</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nebeds"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NEBEDS</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nibeds"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NIBEDS</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nibseg"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NIBSEG</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nebseg"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NEBSEG</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mned"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>MNED</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mnled"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>MNLED</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mnsed"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>MNSED</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mnraed"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>MNRAED</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mnried"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>MNRIED</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-modal_ic"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>MODAL_IC</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-p_read"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>P_READ</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-p_read2"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>P_READ2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-slopeflag"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>SLOPEFLAG</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-test_el"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>test_el</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fluxtype"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>FLUXTYPE</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rk_stage"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>RK_STAGE</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rk_order"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>RK_ORDER</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-padapt"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>padapt</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pflag"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>pflag</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pl~2"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>pl</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ph"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>ph</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-px"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>px</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lebesguep"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>lebesgueP</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-gflag"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>gflag</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pa~4"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pa</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-init_parser"></span>
+              logical,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>init_parser</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-stblzr"></span>
+              logical,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stblzr</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iwrite"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iwrite</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-c13"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>C13</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-c16"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>C16</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-diorism"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>diorism</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-porosity"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>porosity</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sevdm"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>SEVDM</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dot"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DOT</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dhb_x"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DHB_X</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dhb_y"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DHB_Y</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dphidx"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DPHIDX</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dphidy"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DPHIDY</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-slimit"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>slimit</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-plimit"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>plimit</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pflag2con1"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>pflag2con1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pflag2con2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>pflag2con2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-efa_gp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>EFA_GP</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-emo_gp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>EMO_GP</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-slimit1"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>slimit1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-slimit2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>slimit2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-slimit3"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>slimit3</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-el_ang"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>EL_ANG</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-slimit4"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>slimit4</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bg_dif"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>bg_dif</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-trc_dif"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>trc_dif</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-slimit5"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>slimit5</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fg_l"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>FG_L</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-l2er_global"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>l2er_global</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-temperg"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>temperg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-slope_weight"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>slope_weight</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-h_tri"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>H_TRI</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mag1"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>MAG1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mag2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>MAG2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kappa"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>kappa</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-s0"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>s0</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-uniform_dif"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              TARGET
+            </td>
+            <td>::</td>
+            <td><strong>uniform_dif</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rampdg"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>RAMPDG</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-s1"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>S1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-s2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>S2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sav"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>SAV</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-source_x"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>SOURCE_X</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-source_y"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>SOURCE_Y</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-timedg"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>TIMEDG</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-timeh_dg"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>TIMEH_DG</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tk"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>TK</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qnam_gp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>QNAM_GP</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qnph_gp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>QNPH_GP</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sl2_m"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>SL2_M</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sl2_nyu"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>SL2_NYU</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sl3_md"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>SL3_MD</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-evmavg"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>EVMAvg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sevdmavg"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>SEVDMAvg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-umag"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>UMAG</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-wsx_gp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>WSX_GP</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-wsy_gp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>WSY_GP</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qmag_in"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>QMag_IN</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qmag_ex"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>QMag_EX</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-subphi_in"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>subphi_IN</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-subphi_ex"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>subphi_EX</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iota_ex"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iota_EX</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iota_in"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iota_IN</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iota2_ex"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iota2_EX</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iota2_in"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iota2_IN</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-wdflg"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>WDFLG</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-wdflg_tmp"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>WDFLG_TMP</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dofw"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DOFW</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-el_updated"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>EL_UPDATED</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ledge_nvec"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>LEDGE_NVEC</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-varx"></span>
+              character(len=7),
+            </td>
+              <td>public,</td>
+            <td>
+parameter,               DIMENSION(4)
+            </td>
+            <td>::</td>
+            <td><strong>varx</strong></td>
+<td> =</td>
+                <td>[character(l&#39;QX_ROE&#39;, &#39;QY_ROE&#39;, &#39;bed_ROE&#39;]</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vary"></span>
+              character(len=7),
+            </td>
+              <td>public,</td>
+            <td>
+parameter,               DIMENSION(4)
+            </td>
+            <td>::</td>
+            <td><strong>vary</strong></td>
+<td> =</td>
+                <td>[character(l&#39;QX_ROE&#39;, &#39;QY_ROE&#39;, &#39;bed_ROE&#39;]</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-funcx"></span>
+              character(len=200),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>funcx</strong>(4)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-funcy"></span>
+              character(len=200),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>funcy</strong>(4)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-valx"></span>
+              real(kind=sz),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>valx</strong>(4)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-valy"></span>
+              real(kind=sz),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>valy</strong>(4)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-drpsi"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DRPSI</strong>(3)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dspsi"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DSPSI</strong>(3)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vec1"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>VEC1</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vec2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>VEC2</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dofs"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DOFS</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pcount"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PCOUNT</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pdg"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PDG</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ncount"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>NCOUNT</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nedel"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>NEDEL</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nedno"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>NEDNO</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nedsd"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>NEDSD</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nedno1"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>NEDNO1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-niedn"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>NIEDN</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nledn"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>NLEDN</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-needn"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>NEEDN</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nfedn"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>NFEDN</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nredn"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>NREDN</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nebedn"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>NEBEDN</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nibedn"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>NIBEDN</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nibsegn"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>NIBSEGN</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nebsegn"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>NEBSEGN</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-el_nbors"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>EL_NBORS</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-backnodes"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>BACKNODES</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mark"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>MARK</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-atvd"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>ATVD</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-btvd"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>BTVD</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ctvd"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>CTVD</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dtvd"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DTVD</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-max_boa_dt"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>MAX_BOA_DT</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-e1"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>e1</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-balance"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>balance</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rkc_t"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>RKC_T</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rkc_u"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>RKC_U</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rkc_tprime"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>RKC_Tprime</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rkc_tdprime"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>RKC_Tdprime</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rkc_a"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>RKC_a</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rkc_b"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>RKC_b</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rkc_c"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>RKC_c</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rkc_mu"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>RKC_mu</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rkc_tildemu"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>RKC_tildemu</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rkc_nu"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>RKC_nu</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rkc_gamma"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>RKC_gamma</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bath"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>BATH</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dbathdx"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DBATHDX</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dbathdy"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DBATHDY</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sfac_elem"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>SFAC_ELEM</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bathed"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>BATHED</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sfaced"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>SFACED</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cosnx"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>COSNX</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sinnx"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>SINNX</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dp_node"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DP_NODE</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dp_vol"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DP_VOL</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-drphi"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DRPHI</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dsphi"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DSPHI</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-drdx"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DRDX</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dsdx"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DSDX</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-drdy"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DRDY</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dsdy"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DSDY</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dxphi2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DXPHI2</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dyphi2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DYPHI2</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-phi2~2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PHI2</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-efa_dg"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>EFA_DG</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-emo_dg"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>EMO_DG</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ufa_dg"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>UFA_DG</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-umo_dg"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>UMO_DG</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vfa_dg"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>VFA_DG</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vmo_dg"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>VMO_DG</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xlen"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>XLEN</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hb"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>HB</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mann"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>MANN</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ibht"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>IBHT</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ebht"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>EBHT</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ebcfsp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>EBCFSP</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ibcfsp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>IBCFSP</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ibcfsb"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>IBCFSB</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-jacobi~2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>JACOBI</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-m_inv"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>M_INV</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-phi_edge_fixed"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>phi_edge_fixed</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-phi_area"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PHI_AREA</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-phi_edge"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PHI_EDGE</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-phi_center"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PHI_CENTER</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-phi_corner"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PHI_CORNER</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-phi_check"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PHI_CHECK</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-phi_corner1"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PHI_CORNER1</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-phi_mid"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PHI_MID</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-phi_integrated"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PHI_INTEGRATED</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-psi_check"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PSI_CHECK</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-psi1"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PSI1</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-psi2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PSI2</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-psi3"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PSI3</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-q_hat"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>Q_HAT</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qib"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>QIB</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qx"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>QX</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qy"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>QY</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ze"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>ZE</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ze_edge"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>ze_edge</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qx_edge"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>qx_edge</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qy_edge"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>qy_edge</strong>(:</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-elem_edge"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>elem_edge</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nieds_count"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>nieds_count</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bed"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE, target
+            </td>
+            <td>::</td>
+            <td><strong>bed</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dynp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>dynP</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dynp_max"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>dynP_MAX</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dynp_min"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>dynP_MIN</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iota"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>iota</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iotaa"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>iotaa</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iota2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>iota2</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iota_max"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>iota_MAX</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iota_min"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>iota_MIN</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iotaa2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>iotaa2</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iotaa3"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>iotaa3</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iota2_max"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>iota2_MAX</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iota2_min"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>iota2_MIN</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-arrayfix"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>arrayfix</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cori_el"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>CORI_EL</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fric_el"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>FRIC_EL</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ze_max"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>ZE_MAX</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ze_min"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>ZE_MIN</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dpe_min"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DPE_MIN</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-water_depth_old"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>WATER_DEPTH_OLD</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-water_depth"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>WATER_DEPTH</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-advectqx"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>ADVECTQX</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-advectqy"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>ADVECTQY</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sourceqx"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>SOURCEQX</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sourceqy"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>SOURCEQY</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lz"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>LZ</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mz"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>MZ</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hz"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>HZ</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tz"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>TZ</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qnam_dg"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>QNAM_DG</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qnph_dg"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>QNPH_DG</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rhs_ze"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>RHS_ZE</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rhs_bed"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>RHS_bed</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rhs_qx"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>RHS_QX</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rhs_qy"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>RHS_QY</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rhs_iota"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>RHS_iota</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rhs_iota2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>RHS_iota2</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rhs_dynp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>RHS_dynP</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rhs_bed_in"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>RHS_bed_IN</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rhs_bed_ex"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>RHS_bed_EX</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bed_hat_o"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>bed_HAT_O</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xagp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>XAGP</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-yagp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>YAGP</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-wagp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>WAGP</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xegp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>XEGP</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-yegp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>YEGP</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-wegp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>WEGP</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sl3"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>SL3</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xbc"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>XBC</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ybc"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>YBC</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xfac"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>XFAC</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-yfac"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>YFAC</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srfac"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>SRFAC</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-edgeq"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>EDGEQ</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-phi~4"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PHI</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dphidz1~3"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DPHIDZ1</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dphidz2~3"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>DPHIDZ2</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-phi_stae"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PHI_STAE</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-phi_stav"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>PHI_STAV</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bed_in"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>bed_IN</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bed_ex"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>bed_EX</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bed_hat"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>bed_HAT</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lim_count"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>lim_count</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lim_count_roll"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>lim_count_roll</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fact"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>fact</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-focal_neigh"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>focal_neigh</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-focal_up"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>focal_up</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bi"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>bi</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bj~2"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>bj</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xbcb"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>XBCb</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ybcb"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>YBCb</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xi1"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>xi1</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xi2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>xi2</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xtransform"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>xtransform</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ytransform"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>ytransform</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xi1bcb"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>xi1BCb</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xi2bcb"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>xi2BCb</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xi1vert"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>xi1vert</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xi2vert"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>xi2vert</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xtransformv"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>xtransformv</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ytransformv"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>ytransformv</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xbcv"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>XBCv</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ybcv"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>YBCv</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xi1bcv"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>xi1BCv</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xi2bcv"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>xi2BCv</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-area_integral"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>Area_integral</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-f"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>f</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-g0"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>g0</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-varsigma0"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>varsigma0</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fv"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>fv</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-g0v"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>g0v</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-varsigma0v"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>varsigma0v</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-var2sigmag"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>var2sigmag</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-var2sigmav"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>var2sigmav</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nmatrix"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>Nmatrix</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nmatrixinv"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>NmatrixInv</strong>(:,:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-deltx"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>deltx</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-delty"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>delty</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pmatrix"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>pmatrix</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-zemin"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>ZEmin</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-zemax"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>ZEmax</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qxmin"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>QXmin</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qxmax"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>QXmax</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qymin"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>QYmin</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qymax"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>QYmax</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iotamin"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>iotamin</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iotamax"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>iotamax</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iota2min"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>iota2min</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong>END OF DATA DECLARATIONS <strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong>**</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iota2max"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              Allocatable
+            </td>
+            <td>::</td>
+            <td><strong>iota2max</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong>END OF DATA DECLARATIONS <strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong>**</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+        </section>
+        <br>
+
+
+
+
+
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-alloc_edges0"></span> <h3>public  subroutine <a href='../proc/alloc_edges0.html'>ALLOC_EDGES0</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-alloc_edges1"></span> <h3>public  subroutine <a href='../proc/alloc_edges1.html'>ALLOC_EDGES1</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-alloc_dg1"></span> <h3>public  subroutine <a href='../proc/alloc_dg1.html'>ALLOC_DG1</a>(MNBFR)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mnbfr~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>MNBFR</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-alloc_dg2"></span> <h3>public  subroutine <a href='../proc/alloc_dg2.html'>ALLOC_DG2</a>(MNFFR)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mnffr~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>MNFFR</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-alloc_dg3"></span> <h3>public  subroutine <a href='../proc/alloc_dg3.html'>ALLOC_DG3</a>(MNP)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mnp~4"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>MNP</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-alloc_dg4"></span> <h3>public  subroutine <a href='../proc/alloc_dg4.html'>ALLOC_DG4</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-alloc_rk"></span> <h3>public  subroutine <a href='../proc/alloc_rk.html'>ALLOC_RK</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-alloc_jacobi"></span> <h3>public  subroutine <a href='../proc/alloc_jacobi.html'>ALLOC_JACOBI</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-alloc_area_gauss"></span> <h3>public  subroutine <a href='../proc/alloc_area_gauss.html'>ALLOC_AREA_GAUSS</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-alloc_edge_gauss"></span> <h3>public  subroutine <a href='../proc/alloc_edge_gauss.html'>ALLOC_EDGE_GAUSS</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-alloc_slopelim"></span> <h3>public  subroutine <a href='../proc/alloc_slopelim.html'>ALLOC_SLOPELIM</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-alloc_dg_wetdry"></span> <h3>public  subroutine <a href='../proc/alloc_dg_wetdry.html'>ALLOC_DG_WETDRY</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-alloc_stae"></span> <h3>public  subroutine <a href='../proc/alloc_stae.html'>ALLOC_STAE</a>(L)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-l~15"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>L</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-alloc_stav"></span> <h3>public  subroutine <a href='../proc/alloc_stav.html'>ALLOC_STAV</a>(L)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-l~16"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>L</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              DGSWEM Documentation
+ was developed by Ashton Cole<br>              &copy; 2026 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>
