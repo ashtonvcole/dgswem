@@ -1,0 +1,1720 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Documentation for DGSWEM Documentation">
+    <meta name="author" content="Ashton Cole" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>GLOBAL_3DVS &ndash; DGSWEM Documentation</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">DGSWEM Documentation </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../program/dgswem.html">Program</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>GLOBAL_3DVS
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.3% of total for modules and submodules.">37 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/global_3dvs.F"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/global_3dvs.f.html'>global_3dvs.F</a></li>
+            <li class="breadcrumb-item active" aria-current="page">GLOBAL_3DVS</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-gamma">GAMMA</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-q~4">Q</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-sigma">SIGMA</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-evtot">EVTOT</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-inm">INM</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-lvn">LVN</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-wz">WZ</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-sigt">SIGT</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-temp">TEMP</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-sal">SAL</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-bcp">BCP</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-q20">Q20</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-l~23">L</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-isdhout">ISDHOUT</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-isvhout">ISVHOUT</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-isthout">ISTHOUT</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-i~72">I</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-idtalp1">IDTALP1</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-idt1malp1">IDT1MALP1</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-a~9">A</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-b~6">B</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-amb">AMB</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-gorho">GORHO</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-gorhooamb">GORHOOAMB</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-kp">KP</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-evmin">EVMIN</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-evcon">EVCON</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-z0s">Z0S</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-z0b">Z0B</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-dtalp3">DTALP3</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-dt1malp3">DT1MALP3</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-dtalp2">DTALP2</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-dt1malp2">DT1MALP2</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-theta1~2">THETA1</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-theta2">THETA2</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-nfen">NFEN</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-idiag">IDIAG</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-islip">ISLIP</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-ievc">IEVC</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-istart">ISTART</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-iden">IDEN</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-i3dsd">I3DSD</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-ntsssd">NTSSSD</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-ntsfsd">NTSFSD</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-nspo3dsd">NSPO3DSD</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-nssd">NSSD</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-nhn3dsd">NHN3DSD</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-isdrec">ISDREC</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-i3dsv">I3DSV</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-ntsssv">NTSSSV</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-ntsfsv">NTSFSV</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-nspo3dsv">NSPO3DSV</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-nssv">NSSV</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-nhn3dsv">NHN3DSV</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-isvrec">ISVREC</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-i3dst">I3DST</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-ntssst">NTSSST</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-ntsfst">NTSFST</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-nspo3dst">NSPO3DST</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-nsst">NSST</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-nhn3dst">NHN3DST</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-istrec">ISTREC</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-i3dgd">I3DGD</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-ntssgd">NTSSGD</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-ntsfgd">NTSFGD</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-nspo3dgd">NSPO3DGD</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-nsgd">NSGD</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-igdrec">IGDREC</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-i3dgv">I3DGV</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-ntssgv">NTSSGV</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-ntsfgv">NTSFGV</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-nspo3dgv">NSPO3DGV</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-nsgv">NSGV</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-igvrec">IGVREC</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-i3dgt">I3DGT</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-ntssgt">NTSSGT</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-ntsfgt">NTSFGT</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-nspo3dgt">NSPO3DGT</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-nsgt">NSGT</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-igtrec">IGTREC</a>
+            <a class="list-group-item" href="../module/global_3dvs.html#variable-turb_allocated">turb_allocated</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/global_3dvs.html#proc-alloc_3dvs">ALLOC_3DVS</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='diff45_41.html'>DIFF45_41</a></li>
+                  <li class="list-inline-item"><a href='global.html'>GLOBAL</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      
+      <br>
+
+
+        <section>
+          <h2>Variables</h2>
+            <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-gamma"></span>
+              complex,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>GAMMA</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-q~4"></span>
+              complex,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>Q</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sigma"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>SIGMA</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-evtot"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>EVTOT</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-inm"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>INM</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lvn"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>LVN</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-wz"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>WZ</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sigt"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>SIGT</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-temp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>TEMP</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sal"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>SAL</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bcp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>BCP</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-q20"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>Q20</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-l~23"></span>
+              real(kind=SZ),
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>L</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-isdhout"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>ISDHOUT</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-isvhout"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>ISVHOUT</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-isthout"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              ALLOCATABLE
+            </td>
+            <td>::</td>
+            <td><strong>ISTHOUT</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~72"></span>
+              complex,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>I</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-idtalp1"></span>
+              complex,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IDTALP1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-idt1malp1"></span>
+              complex,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IDT1MALP1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-a~9"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>A</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-b~6"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>B</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-amb"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>AMB</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-gorho"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>GORHO</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-gorhooamb"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>GORHOOAMB</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-kp"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>KP</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-evmin"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>EVMIN</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-evcon"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>EVCON</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z0s"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Z0S</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z0b"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Z0B</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dtalp3"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DTALP3</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dt1malp3"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DT1MALP3</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dtalp2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DTALP2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dt1malp2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DT1MALP2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-theta1~2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>THETA1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-theta2"></span>
+              real(kind=SZ),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>THETA2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nfen"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NFEN</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-idiag"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IDIAG</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-islip"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ISLIP</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ievc"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IEVC</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-istart"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ISTART</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iden"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IDEN</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i3dsd"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>I3DSD</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ntsssd"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NTSSSD</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ntsfsd"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NTSFSD</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nspo3dsd"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSPO3DSD</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nssd"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSSD</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nhn3dsd"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NHN3DSD</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-isdrec"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ISDREC</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i3dsv"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>I3DSV</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ntsssv"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NTSSSV</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ntsfsv"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NTSFSV</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nspo3dsv"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSPO3DSV</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nssv"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSSV</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nhn3dsv"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NHN3DSV</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-isvrec"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ISVREC</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i3dst"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>I3DST</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ntssst"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NTSSST</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ntsfst"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NTSFST</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nspo3dst"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSPO3DST</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nsst"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSST</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nhn3dst"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NHN3DST</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-istrec"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ISTREC</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i3dgd"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>I3DGD</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ntssgd"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NTSSGD</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ntsfgd"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NTSFGD</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nspo3dgd"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSPO3DGD</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nsgd"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSGD</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-igdrec"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IGDREC</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i3dgv"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>I3DGV</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ntssgv"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NTSSGV</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ntsfgv"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NTSFGV</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nspo3dgv"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSPO3DGV</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nsgv"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSGV</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-igvrec"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IGVREC</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i3dgt"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>I3DGT</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ntssgt"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NTSSGT</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ntsfgt"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NTSFGT</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nspo3dgt"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSPO3DGT</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nsgt"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NSGT</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-igtrec"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IGTREC</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-turb_allocated"></span>
+              logical,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>turb_allocated</strong></td>
+<td> =</td>
+                <td>.false.</td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+        </section>
+        <br>
+
+
+
+
+
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-alloc_3dvs"></span> <h3>public  subroutine <a href='../proc/alloc_3dvs.html'>ALLOC_3DVS</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              DGSWEM Documentation
+ was developed by Ashton Cole<br>              &copy; 2026 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>
