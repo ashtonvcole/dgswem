@@ -91,7 +91,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.1% of total for procedures.">13 statements</a>
+                 title=" 0.1% of total for procedures.">16 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -172,7 +172,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-n1"></span>
+              <span class="anchor" id="variable-n1~3"></span>
               integer(kind=c_int),
             </td>
 <td></td>
@@ -182,12 +182,12 @@
             <td>::</td>
             <td><strong>n1</strong></td>
             <td>
-                
+                <p>The first node index.</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-n2"></span>
+              <span class="anchor" id="variable-n2~3"></span>
               integer(kind=c_int),
             </td>
 <td></td>
@@ -197,7 +197,7 @@
             <td>::</td>
             <td><strong>n2</strong></td>
             <td>
-                
+                <p>The second node index.</p>
             </td>
         </tr>
     </tbody>
@@ -205,6 +205,14 @@
 
       <h3>Return Value <span class="anchor" id="variable-get_edge_no"></span><small>integer</small></h3>
     
+    <h3>Description</h3>
+    <p>Look up the edge index between a node and its neighbor.</p>
+<p>The Fortran 1-first convention should be used when providing
+arguments. Conversion to C's convention is done under-the-hood.</p>
+<div class="alert alert-warning">
+<p class="alert-title h4">Warning</p>
+<p>If nothing is found, 0 is returned.</p>
+</div>
     <br>
 
  </div>

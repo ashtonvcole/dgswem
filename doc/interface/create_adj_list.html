@@ -91,7 +91,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.1% of total for procedures.">13 statements</a>
+                 title=" 0.1% of total for procedures.">16 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -172,7 +172,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-np"></span>
+              <span class="anchor" id="variable-np~3"></span>
               integer(kind=c_int),
             </td>
 <td></td>
@@ -182,7 +182,7 @@
             <td>::</td>
             <td><strong>np</strong></td>
             <td>
-                
+                <p>Number of nodes in the mesh.</p>
             </td>
         </tr>
         <tr>
@@ -197,7 +197,7 @@
             <td>::</td>
             <td><strong>nedges</strong></td>
             <td>
-                
+                <p>Number of edges in the mesh.</p>
             </td>
         </tr>
         <tr>
@@ -212,7 +212,7 @@
             <td>::</td>
             <td><strong>nedno1</strong>(nedges)</td>
             <td>
-                
+                <p>List of starting node indexes for each edge.</p>
             </td>
         </tr>
         <tr>
@@ -227,12 +227,19 @@
             <td>::</td>
             <td><strong>nedno2</strong>(nedges)</td>
             <td>
-                
+                <p>List of terminal node indexes for each edge.</p>
             </td>
         </tr>
     </tbody>
   </table>
 
+    <h3>Description</h3>
+    <p>Create an adjacency list for each node, i.e. a list of its
+neighbors.</p>
+<p>The structure is a list of lists of pairs. Each node gets
+a list of neighbors. Each neighbor is represented with a pair: the
+adjacent node index and the edge index. Note that these are converted
+to C's 0-first convention under-the-hood.</p>
     <br>
 
  </div>

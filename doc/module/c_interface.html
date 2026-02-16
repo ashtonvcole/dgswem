@@ -91,7 +91,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.1% of total for modules and submodules.">15 statements</a>
+                 title=" 0.2% of total for modules and submodules.">18 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -163,7 +163,7 @@
     </div>
 
     <div class="col-md-9" id='text'>
-      
+      <p>Fortran to C interface for building dynamically sized edge connectivity arrays.</p>
       
       
       <br>
@@ -185,7 +185,13 @@
     public  function get_edge_no(n1, n2) bind(C, name='get_edge_no')  
 
     </h3>
-  
+  <p>Look up the edge index between a node and its neighbor.</p>
+<p>The Fortran 1-first convention should be used when providing
+arguments. Conversion to C's convention is done under-the-hood.</p>
+<div class="alert alert-warning">
+<p class="alert-title h4">Warning</p>
+<p>If nothing is found, 0 is returned.</p>
+</div>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -200,7 +206,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-n1"></span>
+              <span class="anchor" id="variable-n1~3"></span>
               integer(kind=c_int),
             </td>
 <td></td>
@@ -210,12 +216,12 @@
             <td>::</td>
             <td><strong>n1</strong></td>
             <td>
-                
+                <p>The first node index.</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-n2"></span>
+              <span class="anchor" id="variable-n2~3"></span>
               integer(kind=c_int),
             </td>
 <td></td>
@@ -225,7 +231,7 @@
             <td>::</td>
             <td><strong>n2</strong></td>
             <td>
-                
+                <p>The second node index.</p>
             </td>
         </tr>
     </tbody>
@@ -253,7 +259,12 @@
     public  subroutine create_adj_list(np, nedges, nedno1, nedno2) bind(C, name='create_adj_list')  
 
     </h3>
-  
+  <p>Create an adjacency list for each node, i.e. a list of its
+neighbors.</p>
+<p>The structure is a list of lists of pairs. Each node gets
+a list of neighbors. Each neighbor is represented with a pair: the
+adjacent node index and the edge index. Note that these are converted
+to C's 0-first convention under-the-hood.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -268,7 +279,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-np"></span>
+              <span class="anchor" id="variable-np~3"></span>
               integer(kind=c_int),
             </td>
 <td></td>
@@ -278,7 +289,7 @@
             <td>::</td>
             <td><strong>np</strong></td>
             <td>
-                
+                <p>Number of nodes in the mesh.</p>
             </td>
         </tr>
         <tr>
@@ -293,7 +304,7 @@
             <td>::</td>
             <td><strong>nedges</strong></td>
             <td>
-                
+                <p>Number of edges in the mesh.</p>
             </td>
         </tr>
         <tr>
@@ -308,7 +319,7 @@
             <td>::</td>
             <td><strong>nedno1</strong>(nedges)</td>
             <td>
-                
+                <p>List of starting node indexes for each edge.</p>
             </td>
         </tr>
         <tr>
@@ -323,7 +334,7 @@
             <td>::</td>
             <td><strong>nedno2</strong>(nedges)</td>
             <td>
-                
+                <p>List of terminal node indexes for each edge.</p>
             </td>
         </tr>
     </tbody>

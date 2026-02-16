@@ -11,6 +11,16 @@ C
 C***********************************************************************
 
       SUBROUTINE CALC_NORMAL()
+C! Calculate the unit normal vector for an edge.
+C!
+C! This assumes that the elements are numbered counter-clockwise. The basic
+C! formula is
+C!
+C! $$
+C! \frac{(\Delta y, -\Delta x)}{||\Delta \mathbf{x}||}
+C! $$
+C!
+C! This is the normalized edge vector rotated clockwise by 90 degrees.
 
 C.....Use appropriate modules
 
