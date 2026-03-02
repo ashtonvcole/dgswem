@@ -1,5 +1,11 @@
 
       MODULE Couple2Swan
+C! Routines for coupling DGSWEM to SWAN (Simulated WAves Nearshore). See their
+C! website for details
+C! [https://swanmodel.sourceforge.io](https://swanmodel.sourceforge.io).
+C! The point is that SWAN is used to compute wind-generatd waves and the
+C! radiation stresses they cause on ocean circulation, i.e. a forcing term. This
+C! kind of coupling is also implemented in ADCIRC. See ADCSWAN.
 
       USE SIZES,   ONLY: SZ
 
@@ -13,6 +19,7 @@ Casey 090302: The coupling interval controls how ADCIRC and SWAN
 C             take turns during the simulation.  It is set
 C             at the end of PADCSWAN_INIT.
       INTEGER :: CouplingInterval
+C! How often to call SWAN, per number of time steps.
 
 Casey 090302: These logical variables will be reset to .TRUE.
 C             if the water levels in SWAN are coupled to ADCIRC.

@@ -270,7 +270,7 @@ C.....Set the exterior value of the bathymetry equal to the interior
 #endif
 
 #ifdef DYNP
-            dynP_EX = 0.0 !What's the right setting here?
+            dynP_EX = 0.0 !What is the right setting here?
 #endif
 
 #ifdef SED_LAY                  !When layered, these change

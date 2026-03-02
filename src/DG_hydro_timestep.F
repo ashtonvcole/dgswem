@@ -22,6 +22,33 @@ C
 C***********************************************************************
 
       SUBROUTINE DG_HYDRO_TIMESTEP(IT)
+      !! Compute a single iteration update to the hydrodynamic state.
+      !!
+      !! This function proceeds in the following steps.
+      !!
+      !! 1. Compute forcings and boundary conditions.
+      !!     - Ramp terms are also computed to rescale the forcings by
+      !!       a tanh function of time. This is intended to prevent
+      !!       shock formation early on.
+      !!
+      !! 2. Update state variables [[DG(module):ZE(variable)]],
+      !!    [[DG(module):QX(variable)]], and [[DG(module):QX(variable)]]
+      !!    using a general Runge-Kutta method.
+      !!     - This can either be RKSSP, Runge-Kutta
+      !!       strong stability-preserving, or RKC, Runge-Kutta
+      !!       Chebyshev. The A and B*dt coefficients correspond to the
+      !!       conventions for a Butcher tableau.
+      !!     - This may include updates to a tracer, chemistry, or
+      !!       sediment transport, if enabled.
+      !!
+      !! 3. Additional solution adjustments, if enabled.
+      !!     - Wetting/drying algorithm
+      !!     - Slope limiting
+      !!     - P-enrichment
+      !!     - Stabilization filtering
+      !!
+      !! 4. Save final solution. Clear intermedite Runge-Kutta steps
+      !!    from memory.
 
 C.....Use appropriate modules
       
@@ -45,7 +72,9 @@ C.....Declare local variables
 
       real(sz) avg_rain
 
-      INTEGER IT,L,GED,NBOREL,NNBORS,NDRYNBORS,NQEDS,Istop,k,j,kk,i,mm
+      INTEGER IT
+      !! Iteration number
+      INTEGER L,GED,NBOREL,NNBORS,NDRYNBORS,NQEDS,Istop,k,j,kk,i,mm
       INTEGER Detected,flagger,store
       REAL(SZ) QBCT1,QBCT2,QBC1,QBC2,ZP(3),QXP(3),QXP_OLD(3),
      $     QYP(3),QYP_OLD(3),ZP_OLD(3),ell_1,ell_2,ell_3
