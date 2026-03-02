@@ -91,7 +91,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.2% of total for procedures.">48 statements</a>
+                 title=" 0.2% of total for procedures.">49 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -160,10 +160,10 @@
             <li class="list-group-item">
               <ul class="list-inline">
                   <li class="list-inline-item"><a href='../module/mod_internal_edge.html'>mod_internal_edge</a></li>
-                  <li class="list-inline-item"><a href='../module/couple2swan.html'>Couple2Swan</a></li>
+                  <li class="list-inline-item"><a href='../module/dg.html'>DG</a></li>
                   <li class="list-inline-item"><a href='../module/messenger_elem.html'>MESSENGER_ELEM</a></li>
                   <li class="list-inline-item"><a href='../module/global.html'>GLOBAL</a></li>
-                  <li class="list-inline-item"><a href='../module/dg.html'>DG</a></li>
+                  <li class="list-inline-item"><a href='../module/couple2swan.html'>Couple2Swan</a></li>
               </ul>
             </li>
         </ul>
@@ -171,6 +171,44 @@
     </div>
 
 
+    <p>Compute a single iteration update to the hydrodynamic state.</p>
+<p>This function proceeds in the following steps.</p>
+<ol>
+<li>
+<p>Compute forcings and boundary conditions.</p>
+<ul>
+<li>Ramp terms are also computed to rescale the forcings by
+  a tanh function of time. This is intended to prevent
+  shock formation early on.</li>
+</ul>
+</li>
+<li>
+<p>Update state variables <a href="../module/dg.html#variable-ze">ZE</a>,
+   <a href="../module/dg.html#variable-qx">QX</a>, and <a href="../module/dg.html#variable-qx">QX</a>
+   using a general Runge-Kutta method.</p>
+<ul>
+<li>This can either be RKSSP, Runge-Kutta
+  strong stability-preserving, or RKC, Runge-Kutta
+  Chebyshev. The A and B*dt coefficients correspond to the
+  conventions for a Butcher tableau.</li>
+<li>This may include updates to a tracer, chemistry, or
+  sediment transport, if enabled.</li>
+</ul>
+</li>
+<li>
+<p>Additional solution adjustments, if enabled.</p>
+<ul>
+<li>Wetting/drying algorithm</li>
+<li>Slope limiting</li>
+<li>P-enrichment</li>
+<li>Stabilization filtering</li>
+</ul>
+</li>
+<li>
+<p>Save final solution. Clear intermedite Runge-Kutta steps
+   from memory.</p>
+</li>
+</ol>
 
 
     <h3>Arguments</h3>
@@ -186,7 +224,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-it~5"></span>
+              <span class="anchor" id="variable-it~14"></span>
               integer
             </td>
 <td></td>
@@ -196,7 +234,7 @@
             <td>::</td>
             <td><strong>IT</strong></td>
             <td>
-                
+                <p>Iteration number</p>
             </td>
         </tr>
     </tbody>

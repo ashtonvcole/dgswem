@@ -5,8 +5,8 @@
 [] create_edge_data.F
 [] cstart.F
 [] detector.F
-[] DG_hydro_timestep.F
-[] DG_timestep.F
+[x] DG_hydro_timestep.F
+[x] DG_timestep.F
 [] dg.F
 [] dgswem.F
 [] diff45_41.F

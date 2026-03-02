@@ -9,6 +9,18 @@ C
 C***********************************************************************
 
       SUBROUTINE DG_TIMESTEP(IT)
+      !! Compute and process a single timestep of DGSWEM.
+	  !!
+	  !! This subroutine follows the following algorithm.
+	  !!
+	  !! 1. Compute the hydrodynamics with [[DG_HYDRO_TIMESTEP(subroutine)]].
+	  !!
+	  !! 2. Extract nodal values from nodal coordinates with
+	  !! [[Modal2Nodal(subroutine)]].
+	  !!
+	  !! 3. Write to file with [[write_results(subroutine)]]. If running in
+      !! parallel with CMPI, wait for all processes to finish before
+      !! writing.
 
 C.....Use appropriate modules
       
@@ -24,6 +36,7 @@ C.....Use appropriate modules
 C.....Declare local variables
 
       INTEGER IT
+	  !! Iteration number
       
 C.....Hydrodynamics
 
@@ -62,6 +75,10 @@ C
 C***********************************************************************
 
       SUBROUTINE SCRUTINIZE_SOLUTION(IT)
+	  !! Inspect a DG solution for negative depths and NaNs.
+	  !!
+	  !! This is a debugging function which is not actually called in the
+	  !! main program.
 
 C.....Use appropriate modules
       

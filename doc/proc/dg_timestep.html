@@ -159,9 +159,9 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/global.html'>GLOBAL</a></li>
                   <li class="list-inline-item"><a href='../module/sizes.html'>SIZES</a></li>
                   <li class="list-inline-item"><a href='../module/messenger_elem.html'>MESSENGER_ELEM</a></li>
-                  <li class="list-inline-item"><a href='../module/global.html'>GLOBAL</a></li>
               </ul>
             </li>
         </ul>
@@ -169,6 +169,22 @@
     </div>
 
 
+    <p>Compute and process a single timestep of DGSWEM.</p>
+<p>This subroutine follows the following algorithm.</p>
+<ol>
+<li>
+<p>Compute the hydrodynamics with <a href="../proc/dg_hydro_timestep.html">DG_HYDRO_TIMESTEP</a>.</p>
+</li>
+<li>
+<p>Extract nodal values from nodal coordinates with
+<a href="../proc/modal2nodal.html">Modal2Nodal</a>.</p>
+</li>
+<li>
+<p>Write to file with <a href="../proc/write_results.html">WRITE_RESULTS</a>. If running in
+parallel with 1, wait for all processes to finish before
+writing.</p>
+</li>
+</ol>
 
 
     <h3>Arguments</h3>
@@ -184,7 +200,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-it~19"></span>
+              <span class="anchor" id="variable-it"></span>
               integer
             </td>
 <td></td>
@@ -194,7 +210,7 @@
             <td>::</td>
             <td><strong>IT</strong></td>
             <td>
-                
+                <p>Iteration number</p>
             </td>
         </tr>
     </tbody>

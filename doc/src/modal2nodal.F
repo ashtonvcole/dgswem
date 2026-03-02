@@ -1,4 +1,9 @@
       SUBROUTINE Modal2Nodal
+	  !! @warning "Deprecated"
+	  !! This function is deprected. See
+	  !! [[write_results(file):modal2nodal(subroutine)]] in
+	  !! [[write_results(file)]].
+	  !! @endwarning
 #ifdef SWAN
 Casey 110422: Create new data structure with discontinuous information for SWAN.
       USE Couple2Adcirc, ONLY: PASS2SWAN
