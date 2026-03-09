@@ -387,12 +387,18 @@ C...
 C! Flag for forcing and flux ramps on spin-up.
       INTEGER NRS
 C! Flag for radiation stresses from wind-driven waves. If 3, then
-C! a coupled SWAN model is used.
+C! a coupled SWAN model is used. See
+C! [[DG_hydro_timestep.F(file):DG_HYDRO_TIMESTEP(subroutine)]].
       INTEGER NSTAE,NSTARTDRY,NSTAV,NT,NTCYFE
-      INTEGER  NTCYFV,NTCYSE,NTCYSV,NTIF,NTIP,NTRSPE,NTRSPV
+      INTEGER  NTCYFV,NTCYSE,NTCYSV,NTIF
+      INTEGER NTIP
+C! Flag for tides. See
+C! [[tidal_potential.F(file):TIDAL_POTENTIAL(subroutine)]].
+      INTEGER NTRSPE,NTRSPV
       INTEGER  NVEL,NVELEXT,NVELME,NWLAT,NWLON
       INTEGER NWS
-C! Flag for meteorlogical forcing.
+C! Flag for meteorlogical forcing. See
+C! [[met_forcing.F(file):MET_FORCING(subroutine)]].
       INTEGER  IBSTART, ICHA, ICSTP, IDSETFLG, IE, IER
       INTEGER  IESTP
       INTEGER  IFNLCAT, IFNLCT, IFNLFA
