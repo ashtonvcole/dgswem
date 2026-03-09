@@ -88,8 +88,11 @@ C.....Declare local variables
 C.....Compute the current time
 
       ITDT = IT*DTDP
+C Time elapsed since simulation start
       TIME_A = ITDT + STATIM*86400.0
+C Absolute time
       TIMEH  = ITDT + (STATIM - REFTIM)*86400.0
+C Time elapsed since REFTIM
 
 C.....Update ETA1 (shintaro: do we need this?)
 

@@ -33,7 +33,10 @@ C.....Declare integer variables
       INTEGER, TARGET :: MNES,artdif,tune_by_hand
       INTEGER IRK
       INTEGER J1, J2, J3,negp_fixed,nagp_fixed
-      INTEGER NAGP(8),NCHECK(8), NEGP(8), NEDGES, NRK !42 hardwires for ph=7
+      INTEGER NAGP(8),NCHECK(8), NEGP(8), NEDGES
+      INTEGER NRK
+C! Number of Runge-Kutta stages
+!42 hardwires for ph=7
       INTEGER NIEDS, NLEDS, NEEDS, NFEDS, NREDS, NEBEDS, NIBEDS
       INTEGER NIBSEG, NEBSEG
       INTEGER MNED, MNLED, MNSED, MNRAED, MNRIED
@@ -63,6 +66,8 @@ C.....Declare real variables
       REAL(SZ) MAG1, MAG2
       REAL(SZ), TARGET :: kappa,s0,uniform_dif
       REAL(SZ) RAMPDG
+C! Scaling factor on forcing terms for a gradual spin-up. This prevents
+C! unrealistic shocks from forming at the start of the simulation.
       REAL(SZ) S1, S2, SAV, SOURCE_X, SOURCE_Y
       REAL(SZ) TIMEDG, TIMEH_DG, TK
       REAL(SZ) QNAM_GP, QNPH_GP
@@ -116,7 +121,9 @@ C.....Declare allocatable integer arrays
 C.....Declare allocatable real arrays
       
       REAL(SZ), ALLOCATABLE :: ATVD(:,:), BTVD(:,:), CTVD(:,:)
-      REAL(SZ), ALLOCATABLE :: DTVD(:), MAX_BOA_DT(:),e1(:),balance(:)
+      REAL(SZ), ALLOCATABLE :: DTVD(:)
+C! Array Runge-Kutta stage times, as a fraction of dt, in [0, 1].
+      REAL(SZ), ALLOCATABLE :: MAX_BOA_DT(:),e1(:),balance(:)
       Real(SZ), Allocatable :: RKC_T(:),RKC_U(:),RKC_Tprime(:)
       Real(SZ), Allocatable :: RKC_Tdprime(:),RKC_a(:),RKC_b(:),RKC_c(:)
       Real(SZ), Allocatable :: RKC_mu(:),RKC_tildemu(:),RKC_nu(:),
