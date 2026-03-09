@@ -109,12 +109,30 @@ C
       REAL(SZ) FluxSettlingTime
       INTEGER  FluxSettlingIT
 C     jgf46.08 Fine grained ramp functions (jgf46.21 split flux b.c.s)
-      REAL(SZ) RampExtFlux,DRampExtFlux ! Ramp for external flux b.c.s
-      REAL(SZ) RampIntFlux,DRampIntFlux ! Ramp for internal flux b.c.s
-      REAL(SZ) RampElev,DRampElev    ! Ramp for elevation boundary conditions.
-      REAL(SZ) RampTip,DRampTip      ! Ramp for tidal potential
-      REAL(SZ) RampMete,DRampMete    ! Ramp for wind and atmospheric pressure
-      REAL(SZ) RampWRad,DRampWRad    ! Ramp for wave radiation stress
+      REAL(SZ) RampExtFlux
+C! Ramp factor for external flux boundary conditions.
+      REAL(SZ) DRampExtFlux
+C! Duration of ramp for external flux boundary conditions.
+      REAL(SZ) RampIntFlux
+C! Ramp factor for internal flux boundary conditions.
+      REAL(SZ) DRampIntFlux
+C! Duration of ramp for external flux boundary conditions.
+      REAL(SZ) RampElev
+C! Ramp factor for elevation boundary conditions.
+      REAL(SZ) DRampElev
+C! Duration of ramp for elevation boundary conditions.
+      REAL(SZ) RampTip
+C! Ramp factor for tidal potential.
+      REAL(SZ) DRampTip
+C! Duration of ramp for tidal potential.
+      REAL(SZ) RampMete
+C! Ramp factor for wind and atmospheric pressure.
+      REAL(SZ) DRampMete
+C! Duration of ramp for wind and atmospheric pressure.
+      REAL(SZ) RampWRad
+C! Ramp factor for wave radiation stress.
+      REAL(SZ) DRampWRad
+C! Duration of ramp for wave radiation stress.
 
 C.....Create allocatable arrays
 
@@ -288,7 +306,19 @@ C
 C...
 C...DECLARE real(sz) AND CHAR VARIABLES, EQUIVALENCES
 C...
-      real(sz) STATIM,REFTIM,TIME_A,DTDP,TIMEH,vdtdp,cfl_max
+      real(sz) STATIM
+C! Simulation start time, in days.
+      real(sz) REFTIM
+C! Reference time, in days. Used to compute time elapsed
+C! [[GLOBAL(module):TIMEH(variable)]].
+      real(sz) TIME_A
+C! Absolute time of the step being computef.
+      real(sz) DTDP
+C! Time step per iteration, in seconds.
+      real(sz) TIMEH
+C! Relative time of the step being computed, relative to
+C! [[GLOBAL(module):REFTIM]]
+      real(sz) vdtdp,cfl_max
       real(sz) AVGXY,DIF1R,DIF2R,DIF3R
       real(sz) AEMIN,AE,AA,A1,A2,A3,X1,X2,X3,X4,Y1,Y2,Y3,Y4
       real(sz) FDX1,FDX2,FDX3,FDY1,FDY2,FDY3
@@ -327,7 +357,9 @@ C...
       INTEGER  NFLUXIBP,NPIPE
       INTEGER  NFOVER,NHG,NHY,NOLICAT,NOPE,NOUTC
       INTEGER  NOUTE,NSPOOLE,NOUTV,NSPOOLV,NPRBI
-      INTEGER  NRAMP,NRS,NSTAE,NSTARTDRY,NSTAV,NT,NTCYFE
+      INTEGER  NRAMP
+C! Flag for forcing and flux ramps on spin-up.
+      INTEGER  NRS,NSTAE,NSTARTDRY,NSTAV,NT,NTCYFE
       INTEGER  NTCYFV,NTCYSE,NTCYSV,NTIF,NTIP,NTRSPE,NTRSPV
       INTEGER  NVEL,NVELEXT,NVELME,NWLAT,NWLON,NWS
       INTEGER  IBSTART, ICHA, ICSTP, IDSETFLG, IE, IER
