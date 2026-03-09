@@ -109,12 +109,30 @@ C
       REAL(SZ) FluxSettlingTime
       INTEGER  FluxSettlingIT
 C     jgf46.08 Fine grained ramp functions (jgf46.21 split flux b.c.s)
-      REAL(SZ) RampExtFlux,DRampExtFlux ! Ramp for external flux b.c.s
-      REAL(SZ) RampIntFlux,DRampIntFlux ! Ramp for internal flux b.c.s
-      REAL(SZ) RampElev,DRampElev    ! Ramp for elevation boundary conditions.
-      REAL(SZ) RampTip,DRampTip      ! Ramp for tidal potential
-      REAL(SZ) RampMete,DRampMete    ! Ramp for wind and atmospheric pressure
-      REAL(SZ) RampWRad,DRampWRad    ! Ramp for wave radiation stress
+      REAL(SZ) RampExtFlux
+C! Ramp factor for external flux boundary conditions.
+      REAL(SZ) DRampExtFlux
+C! Duration of ramp for external flux boundary conditions.
+      REAL(SZ) RampIntFlux
+C! Ramp factor for internal flux boundary conditions.
+      REAL(SZ) DRampIntFlux
+C! Duration of ramp for external flux boundary conditions.
+      REAL(SZ) RampElev
+C! Ramp factor for elevation boundary conditions.
+      REAL(SZ) DRampElev
+C! Duration of ramp for elevation boundary conditions.
+      REAL(SZ) RampTip
+C! Ramp factor for tidal potential.
+      REAL(SZ) DRampTip
+C! Duration of ramp for tidal potential.
+      REAL(SZ) RampMete
+C! Ramp factor for wind and atmospheric pressure.
+      REAL(SZ) DRampMete
+C! Duration of ramp for wind and atmospheric pressure.
+      REAL(SZ) RampWRad
+C! Ramp factor for wave radiation stress.
+      REAL(SZ) DRampWRad
+C! Duration of ramp for wave radiation stress.
 
 C.....Create allocatable arrays
 
@@ -189,14 +207,34 @@ C      REAL(SZ),ALLOCATABLE ::   TAU0VAR(:)
       REAL(SZ),ALLOCATABLE ::   RMU00(:),RMV00(:),RMP00(:)
       REAL(SZ),ALLOCATABLE ::   STAIM1(:),STAIM2(:),STAIM3(:)
       REAL(SZ),ALLOCATABLE ::   CH1(:),QB(:),QA(:),SOURSIN(:)!,EVC(:)
-      REAL(SZ),ALLOCATABLE ::   WSX1(:),WSY1(:),PR1(:)
+      REAL(SZ),ALLOCATABLE :: WSX1(:)
+C! Cumulative stress forcings in the $x$ direction at time
+C! [[GLOBAL(module):RSTIME1(variable)]].
+      REAL(SZ),ALLOCATABLE :: WSY1(:)
+C! Cumulative stress forcings in the $y$ direction at time
+C! [[GLOBAL(module):RSTIME1(variable)]].
+      REAL(SZ),ALLOCATABLE :: PR1(:)
       REAL(SZ),ALLOCATABLE ::   WSX2(:),WSY2(:),PR2(:)
       REAL(SZ),ALLOCATABLE ::   WVNX1(:),WVNY1(:),PRN1(:)
       REAL(SZ),ALLOCATABLE ::   WVNX2(:),WVNY2(:),PRN2(:)
-      REAL(SZ),ALLOCATABLE ::   RSNX1(:),RSNY1(:),RSNX2(:),RSNY2(:)
+      REAL(SZ),ALLOCATABLE :: RSNX1(:)
+C! Wind radiation stresses in $x$ direction at time
+C! [[GLOBAL(module):RSTIME1(variable)]].
+      REAL(SZ),ALLOCATABLE :: RSNY1(:)
+C! Wind radiation stresses in $y$ direction at time
+C! [[GLOBAL(module):RSTIME1(variable)]].
+      REAL(SZ),ALLOCATABLE :: RSNX2(:)
+C! Wind radiation stresses in $x$ direction at time
+C! [[GLOBAL(module):RSTIME2(variable)]].
+      REAL(SZ),ALLOCATABLE :: RSNY2(:)
+C! Wind radiation stresses in $y$ direction at time
+C! [[GLOBAL(module):RSTIME2(variable)]].
 #ifdef SWAN
 Casey 101118: Added the following arrays for output of radiation stress gradients.
-      REAL(SZ),ALLOCATABLE,TARGET :: RSNXOUT(:), RSNYOUT(:)
+      REAL(SZ),ALLOCATABLE,TARGET :: RSNXOUT(:)
+C! Used to output [[GLOBAL(module):RSX(variable)]] to `rads.64`.
+      REAL(SZ),ALLOCATABLE,TARGET :: RSNYOUT(:)
+C! Used to output [[GLOBAL(module):RSY(variable)]] to `rads.64`.
 #endif
 C.....Allocate additional variables for wave friction
       REAL(SZ),ALLOCATABLE ::WAVE_T1(:),WAVE_H1(:),WAVE_A1(:),WAVE_D1(:)
@@ -288,7 +326,19 @@ C
 C...
 C...DECLARE real(sz) AND CHAR VARIABLES, EQUIVALENCES
 C...
-      real(sz) STATIM,REFTIM,TIME_A,DTDP,TIMEH,vdtdp,cfl_max
+      real(sz) STATIM
+C! Simulation start time, in days.
+      real(sz) REFTIM
+C! Reference time, in days. Used to compute time elapsed
+C! [[GLOBAL(module):TIMEH(variable)]].
+      real(sz) TIME_A
+C! Absolute time of the step being computed, in seconds.
+      real(sz) DTDP
+C! Time step per iteration, in seconds.
+      real(sz) TIMEH
+C! Relative time of the step being computed, relative to
+C! [[GLOBAL(module):REFTIM]]
+      real(sz) vdtdp,cfl_max
       real(sz) AVGXY,DIF1R,DIF2R,DIF3R
       real(sz) AEMIN,AE,AA,A1,A2,A3,X1,X2,X3,X4,Y1,Y2,Y3,Y4
       real(sz) FDX1,FDX2,FDX3,FDY1,FDY2,FDY3
@@ -299,7 +349,13 @@ C...
       real(sz) DXY11,DXY12,DXY13,DXY21,DXY22,DXY23,DXY31,DXY32,DXY33
       real(sz) XL0,XL1,XL2,YL0,YL1,YL2,SLAM0,SFEA0
       real(sz) WREFTIM,WTIMED,WTIME2,WTIME1,WTIMINC,QTIME1,QTIME2
-      real(sz) FTIMINC,ETIMINC,RSTIME1,RSTIME2,RSTIMINC
+      real(sz) FTIMINC,ETIMINC
+      real(sz) RSTIME1
+C! First wind radiation stress measurement time, in seconds.
+      real(sz) RSTIME2
+C! Second wind radiation stress measurement time, in seconds.
+      real(sz) RSTIMINC
+C! Increment between radiation stress measurement times, in seconds.
       real(sz) DELX,DELY,DIST,DELDIST,DELETA
       real(sz),ALLOCATABLE :: AMIG(:),AMIGT(:),FAMIG(:)
       real(sz),ALLOCATABLE :: PER(:),PERT(:),FPER(:)
@@ -327,9 +383,16 @@ C...
       INTEGER  NFLUXIBP,NPIPE
       INTEGER  NFOVER,NHG,NHY,NOLICAT,NOPE,NOUTC
       INTEGER  NOUTE,NSPOOLE,NOUTV,NSPOOLV,NPRBI
-      INTEGER  NRAMP,NRS,NSTAE,NSTARTDRY,NSTAV,NT,NTCYFE
+      INTEGER NRAMP
+C! Flag for forcing and flux ramps on spin-up.
+      INTEGER NRS
+C! Flag for radiation stresses from wind-driven waves. If 3, then
+C! a coupled SWAN model is used.
+      INTEGER NSTAE,NSTARTDRY,NSTAV,NT,NTCYFE
       INTEGER  NTCYFV,NTCYSE,NTCYSV,NTIF,NTIP,NTRSPE,NTRSPV
-      INTEGER  NVEL,NVELEXT,NVELME,NWLAT,NWLON,NWS
+      INTEGER  NVEL,NVELEXT,NVELME,NWLAT,NWLON
+      INTEGER NWS
+C! Flag for meteorlogical forcing.
       INTEGER  IBSTART, ICHA, ICSTP, IDSETFLG, IE, IER
       INTEGER  IESTP
       INTEGER  IFNLCAT, IFNLCT, IFNLFA
@@ -394,7 +457,17 @@ C
       REAL(SZ) QFORCEJ, QTEMA1, QTEMA2, QTEMA3, QTEMB1, QTEMB2, QTEMB3
       REAL(SZ) QTRATIO, QUNORM, QVNORM, RAMP1, RAMP2, RBARWL, RBARWL1
       REAL(SZ) RBARWL1F, RBARWL2, RBARWL2F, RFF, RFF1, RFF2, RHO0
-      REAL(SZ) RSTRATIO, RSX, RSY, S2SFEA, SADVDTO3, SALTMUL, SFACPP
+      REAL(SZ) RSTRATIO
+C! Ratio between time since the first wind stress measurement and the
+C! wind radiation stress measurement increment. This uses the Runge-
+C! Kutta stage time.
+      REAL(SZ) RSX
+C! Wind radiation stresses in $x$ direction at a Runge-Kutta
+C! stage, interpolated.
+      REAL(SZ) RSY
+C! Wind radiation stresses in $y$ direction at a Runge-Kutta
+C! stage, interpolated.
+      REAL(SZ) S2SFEA, SADVDTO3, SALTMUL, SFACPP
       REAL(SZ) SS1N1, SS1N2, SS1N3, T0N1, T0N2, T0N3, T0XN1
       REAL(SZ) T0XN2, T0XN3, T0XPP3, T0YN1, T0YN2, T0YN3, T0YPP3
       REAL(SZ) TADVODT, TAU0AVG, THAF, THAS, THENALLDSSSTUP
@@ -416,7 +489,10 @@ C.....End (EK)
       REAL(SZ) WINDY, WS, WSMOD, WSX, WSXN1, WSXN2, WSXN3
       REAL(SZ) WSY, WSYN1, WSYN2, WSYN3, WTRATIO,A00,B00,C00,ANGINN
       REAL(SZ) CORI,COSTHETA,COSTHETA1,COSTSET,CROSS,CROSS1
-      REAL(SZ) DAY,DOTVEC,DRAMP,DUM1,DUM2,EVMSUM
+      REAL(SZ) DAY,DOTVEC
+      REAL(SZ) DRAMP
+C! Duration of ramping, in days.
+      REAL(SZ) DUM1,DUM2,EVMSUM
       REAL(SZ) H0,H0L,H0H ! H0L and H0H are added by sb 10/27/05
       REAL(SZ) RNDAY,THETA,THETA1,TOUTSC,RAMP,RHOWAT0
       REAL(SZ) TOUTSE,TOUTFE
