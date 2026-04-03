@@ -1,0 +1,32 @@
+name: CI
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [master]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        compiler: ["gcc", "intel"]
+        os: [ubuntu-24.04, ubuntu-24.04-arm]
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: env-${{ matrix.compiler }}
+          environment-file: environment_${{ matrix.compiler }}.yml
+          auto-activate: false
+      - name: Build
+        run: |
+          conda info
+          bash .github/workflows/build_${{ matrix.compiler }}.sh
+
+      - name: Test
+        run: |
+          cd tests
+          pytest -s test_run.py --binpath ../build_${{ matrix.compiler }}

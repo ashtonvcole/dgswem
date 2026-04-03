@@ -1,0 +1,8 @@
+option('gpu', type: 'boolean', value: false, description:
+      'Enable GPU compilation.')
+option('precision', type: 'combo', choices: ['single', 'double'], value: 'double', description:
+      'Floating point precision.')
+option('parallel', type: 'boolean', value: false, description:
+      'Build parallel DG-SWEM, adcprep, and adcpost.')
+option('netcdf', type: 'boolean', value: false, description:
+      'Enable netCDF output.')
