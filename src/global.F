@@ -109,29 +109,29 @@ C
       REAL(SZ) FluxSettlingTime
       INTEGER  FluxSettlingIT
 C     jgf46.08 Fine grained ramp functions (jgf46.21 split flux b.c.s)
-      REAL(SZ) RampExtFlux
+      REAL(SZ) :: RampExtFlux
 C! Ramp factor for external flux boundary conditions.
-      REAL(SZ) DRampExtFlux
+      REAL(SZ) :: DRampExtFlux
 C! Duration of ramp for external flux boundary conditions.
-      REAL(SZ) RampIntFlux
+      REAL(SZ) :: RampIntFlux
 C! Ramp factor for internal flux boundary conditions.
-      REAL(SZ) DRampIntFlux
+      REAL(SZ) :: DRampIntFlux
 C! Duration of ramp for external flux boundary conditions.
-      REAL(SZ) RampElev
+      REAL(SZ) :: RampElev
 C! Ramp factor for elevation boundary conditions.
-      REAL(SZ) DRampElev
+      REAL(SZ) :: DRampElev
 C! Duration of ramp for elevation boundary conditions.
-      REAL(SZ) RampTip
+      REAL(SZ) :: RampTip
 C! Ramp factor for tidal potential.
-      REAL(SZ) DRampTip
+      REAL(SZ) :: DRampTip
 C! Duration of ramp for tidal potential.
-      REAL(SZ) RampMete
+      REAL(SZ) :: RampMete
 C! Ramp factor for wind and atmospheric pressure.
-      REAL(SZ) DRampMete
+      REAL(SZ) :: DRampMete
 C! Duration of ramp for wind and atmospheric pressure.
-      REAL(SZ) RampWRad
+      REAL(SZ) :: RampWRad
 C! Ramp factor for wave radiation stress.
-      REAL(SZ) DRampWRad
+      REAL(SZ) :: DRampWRad
 C! Duration of ramp for wave radiation stress.
 
 C.....Create allocatable arrays
@@ -278,9 +278,14 @@ C.....Allocate additional variables for wave friction
       INTEGER,ALLOCATABLE ::    NNV(:)
       INTEGER,ALLOCATABLE ::    NNM(:)
       INTEGER,ALLOCATABLE ::    IWKSP(:),IPARM(:),IPV(:)
-      INTEGER,ALLOCATABLE ::    NVDLL(:),NBD(:)
+      INTEGER, ALLOCATABLE :: NVDLL(:)
+C! Number of nodes in each elevation boundary segment. Of size
+C! [[GLOBAL(module):NOPE(variable)]].
+      INTEGER, ALLOCATABLE :: NBD(:)
       INTEGER,ALLOCATABLE ::    NBDV(:,:)
       INTEGER,ALLOCATABLE ::    NVELL(:)
+C! Number of nodes in each normal flow (discharge) boundary segment. Of size
+C! [[GLOBAL(module):NBOU(variable)]].
       INTEGER,ALLOCATABLE ::    NBVV(:,:)
       INTEGER,ALLOCATABLE ::    NELED(:,:)
       INTEGER,ALLOCATABLE ::    SEGTYPE(:)
@@ -320,22 +325,24 @@ C
       INTEGER NHARFR
       COMMON /LSQFREQS/ NHARFR
 C
-      INTEGER NP,NOLICA,NOLIFA,NSCREEN,IHOT,ICS
+      INTEGER :: NP
+C! Number of nodes in the mesh.
+      INTEGER NOLICA,NOLIFA,NSCREEN,IHOT,ICS
       COMMON /EXTMODE5/ NP,NOLICA,NOLIFA,NSCREEN,IHOT,ICS
 
 C...
 C...DECLARE real(sz) AND CHAR VARIABLES, EQUIVALENCES
 C...
-      real(sz) STATIM
+      real(sz) :: STATIM
 C! Simulation start time, in days.
-      real(sz) REFTIM
+      real(sz) :: REFTIM
 C! Reference time, in days. Used to compute time elapsed
 C! [[GLOBAL(module):TIMEH(variable)]].
-      real(sz) TIME_A
+      real(sz) :: TIME_A
 C! Absolute time of the step being computed, in seconds.
-      real(sz) DTDP
+      real(sz) :: DTDP
 C! Time step per iteration, in seconds.
-      real(sz) TIMEH
+      real(sz) :: TIMEH
 C! Relative time of the step being computed, relative to
 C! [[GLOBAL(module):REFTIM]]
       real(sz) vdtdp,cfl_max
@@ -350,11 +357,11 @@ C! [[GLOBAL(module):REFTIM]]
       real(sz) XL0,XL1,XL2,YL0,YL1,YL2,SLAM0,SFEA0
       real(sz) WREFTIM,WTIMED,WTIME2,WTIME1,WTIMINC,QTIME1,QTIME2
       real(sz) FTIMINC,ETIMINC
-      real(sz) RSTIME1
+      real(sz) :: RSTIME1
 C! First wind radiation stress measurement time, in seconds.
-      real(sz) RSTIME2
+      real(sz) :: RSTIME2
 C! Second wind radiation stress measurement time, in seconds.
-      real(sz) RSTIMINC
+      real(sz) :: RSTIMINC
 C! Increment between radiation stress measurement times, in seconds.
       real(sz) DELX,DELY,DIST,DELDIST,DELETA
       real(sz),ALLOCATABLE :: AMIG(:),AMIGT(:),FAMIG(:)
@@ -378,25 +385,35 @@ C...
       INTEGER  FRW,NODEDRYMIN,NODEWETMIN,IBTYPE,ICK
       INTEGER  IDR,IM,IPRBI,JGW,JKI,JME
       INTEGER  JNMM,KMIN,N3,NABOUT
-      INTEGER  NBFR,NBOU,NBVI,NBVJ,NCOR,NE,NE2,NP2
+      INTEGER :: NBOU
+C! Number of normal flow (discharge) boundary segments.
+      INTEGER :: NE
+C! Number of elements in the mesh.
+      INTEGER :: NETA
+C! Number of elevation boundary nodes.
+      INTEGER :: NOPE
+C! Number of elevation boundary segments.
+      INTEGER  NBFR,NBVI,NBVJ,NC.OR,NE2,NP2
       INTEGER  NEIMIN,NEIMAX,NETA,NFFR,NFLUXB,NFLUXF,NFLUXIB,NFLUXRBC
       INTEGER  NFLUXIBP,NPIPE
-      INTEGER  NFOVER,NHG,NHY,NOLICAT,NOPE,NOUTC
+      INTEGER  NFOVER,NHG,NHY,NOLICAT,NOUTC
       INTEGER  NOUTE,NSPOOLE,NOUTV,NSPOOLV,NPRBI
-      INTEGER NRAMP
+      INTEGER :: NRAMP
 C! Flag for forcing and flux ramps on spin-up.
-      INTEGER NRS
+      INTEGER :: NRS
 C! Flag for radiation stresses from wind-driven waves. If 3, then
 C! a coupled SWAN model is used. See
 C! [[DG_hydro_timestep.F(file):DG_HYDRO_TIMESTEP(subroutine)]].
       INTEGER NSTAE,NSTARTDRY,NSTAV,NT,NTCYFE
       INTEGER  NTCYFV,NTCYSE,NTCYSV,NTIF
-      INTEGER NTIP
+      INTEGER :: NTIP
 C! Flag for tides. See
 C! [[tidal_potential.F(file):TIDAL_POTENTIAL(subroutine)]].
       INTEGER NTRSPE,NTRSPV
-      INTEGER  NVEL,NVELEXT,NVELME,NWLAT,NWLON
-      INTEGER NWS
+      INTEGER :: NVEL
+C! Number of normal flow (discharge) boundary nodes.
+      INTEGER :: NVELEXT,NVELME,NWLAT,NWLON
+      INTEGER :: NWS
 C! Flag for meteorlogical forcing. See
 C! [[met_forcing.F(file):MET_FORCING(subroutine)]].
       INTEGER  IBSTART, ICHA, ICSTP, IDSETFLG, IE, IER
@@ -463,14 +480,14 @@ C
       REAL(SZ) QFORCEJ, QTEMA1, QTEMA2, QTEMA3, QTEMB1, QTEMB2, QTEMB3
       REAL(SZ) QTRATIO, QUNORM, QVNORM, RAMP1, RAMP2, RBARWL, RBARWL1
       REAL(SZ) RBARWL1F, RBARWL2, RBARWL2F, RFF, RFF1, RFF2, RHO0
-      REAL(SZ) RSTRATIO
+      REAL(SZ) :: RSTRATIO
 C! Ratio between time since the first wind stress measurement and the
 C! wind radiation stress measurement increment. This uses the Runge-
 C! Kutta stage time.
-      REAL(SZ) RSX
+      REAL(SZ) :: RSX
 C! Wind radiation stresses in $x$ direction at a Runge-Kutta
 C! stage, interpolated.
-      REAL(SZ) RSY
+      REAL(SZ) :: RSY
 C! Wind radiation stresses in $y$ direction at a Runge-Kutta
 C! stage, interpolated.
       REAL(SZ) S2SFEA, SADVDTO3, SALTMUL, SFACPP
@@ -496,7 +513,7 @@ C.....End (EK)
       REAL(SZ) WSY, WSYN1, WSYN2, WSYN3, WTRATIO,A00,B00,C00,ANGINN
       REAL(SZ) CORI,COSTHETA,COSTHETA1,COSTSET,CROSS,CROSS1
       REAL(SZ) DAY,DOTVEC
-      REAL(SZ) DRAMP
+      REAL(SZ) :: DRAMP
 C! Duration of ramping, in days.
       REAL(SZ) DUM1,DUM2,EVMSUM
       REAL(SZ) H0,H0L,H0H ! H0L and H0H are added by sb 10/27/05
