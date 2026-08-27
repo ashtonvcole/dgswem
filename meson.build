@@ -142,10 +142,9 @@ endif
 subdir('src')
 subdir('prep')
 
-# NetCDF test program
+# NetCDF utility library
 if get_option('netcdf')
     subdir('netcdf')
-    subdir('nctest')
 endif
 
 
@@ -222,28 +221,3 @@ executable(
     # dependencies: netcdf_dep,
     link_language: 'fortran'
 )
-
-# NetCDF test program
-if get_option('netcdf')
-    executable(
-        'nctest.exe',
-        sources: ncdg_src + nctest_src,
-        dependencies: netcdf_dep,
-        link_language: 'fortran'
-    )
-
-    if get_option('parallel')
-        executable(
-            'nctest_parallel.exe',
-            sources: ncdg_src + piodg_src + nctest_parallel_src,
-            dependencies: [mpi_dep] + netcdf_dep + pio_dep,
-            link_language: 'fortran'
-        )
-        executable(
-            'piotest.exe',
-            sources: piodg_src + piotest_src,
-            dependencies: [mpi_dep] + pio_dep,
-            link_language: 'fortran'
-        )
-    endif
-endif
