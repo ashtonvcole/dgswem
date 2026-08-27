@@ -167,6 +167,10 @@ if get_option('netcdf')
     dgswem_serial_args += '-DNETCDF'
 endif
 
+if get_option('trace')
+    dgswem_serial_args += '-DTRACE'
+endif
+
 if get_option('parallel')
     dgswem_parallel_src = dgswem_src + mpi_handlers + c_interface_src
     dgswem_parallel_dep = [mpi_dep] + cpp_dep
@@ -188,6 +192,10 @@ if get_option('parallel')
         adcprep_src += ncdg_src + prep_netcdf_src
         adcprep_dep += netcdf_dep
         adcprep_args += '-DNETCDF'
+    endif
+
+    if get_option('trace')
+        dgswem_parallel_args += '-DTRACE'
     endif
 endif
 

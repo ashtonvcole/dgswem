@@ -6,3 +6,5 @@ option('parallel', type: 'boolean', value: false, description:
       'Build parallel DG-SWEM, adcprep, and adcpost.')
 option('netcdf', type: 'boolean', value: false, description:
       'Enable NetCDF output.')
+option('trace', type: 'boolean', value:false, description:
+      'Enable tracer depth-averaged advection/diffusion model.')
