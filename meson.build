@@ -133,6 +133,10 @@ if get_option('netcdf')
 
 endif
 
+if get_option('parallel')
+    mpi_dep = dependency('mpi', language: 'fortran')
+endif
+
 
 
 #############################
@@ -149,75 +153,83 @@ endif
 
 
 
+###########################################
+# COMBINE SOURCES, DEPENDENCIES, AND ARGS #
+###########################################
+
+dgswem_serial_src = dgswem_src + c_interface_src
+dgswem_serial_dep = [cpp_dep]
+dgswem_serial_args = []
+
+if get_option('netcdf')
+    dgswem_serial_src += ncdg_src + dgswem_netcdf_src
+    dgswem_serial_dep += netcdf_dep
+    dgswem_serial_args += '-DNETCDF'
+endif
+
+if get_option('parallel')
+    dgswem_parallel_src = dgswem_src + mpi_handlers + c_interface_src
+    dgswem_parallel_dep = [mpi_dep] + cpp_dep
+    dgswem_parallel_args = ['-DCMPI']
+
+    adcprep_src = prep_src
+    adcprep_dep = [metis_dep]
+    adcprep_args = []
+
+    adcpost_src = post_src
+    # adcpost_dep = []
+    # adcpost_args = []
+
+    if get_option('netcdf')
+        dgswem_parallel_src += ncdg_src + dgswem_netcdf_src + piodg_src + dgswem_pio_src
+        dgswem_parallel_dep += netcdf_dep + pio_dep
+        dgswem_parallel_args += '-DNETCDF'
+
+        adcprep_src += ncdg_src + prep_netcdf_src
+        adcprep_dep += netcdf_dep
+        adcprep_args += '-DNETCDF'
+    endif
+endif
+
+
+
 ######################
 # DEFINE EXECUTABLES #
 ######################
 
 # Serial DGSWEM Main Program
-if get_option('netcdf')
+executable(
+    'dgswem_serial',
+    sources: dgswem_serial_src,
+    dependencies: dgswem_serial_dep,
+    fortran_args: dgswem_serial_args,
+    link_language: 'fortran'
+)
+
+if get_option('parallel')
+    # Parallel DGSWEM Main Program
     executable(
-        'dgswem_serial',
-        sources: dgswem_src + c_interface_src + ncdg_src + dgswem_netcdf_src,
-        dependencies: [cpp_dep] + netcdf_dep,
-        link_language: 'fortran',
-        fortran_args: '-DNETCDF'
+        'dgswem',
+        sources: dgswem_parallel_src,
+        dependencies: dgswem_parallel_dep,
+        fortran_args: dgswem_parallel_args,
+        link_language: 'fortran'
     )
-else
+
+    # Pre-processing program
     executable(
-        'dgswem_serial',
-        sources: dgswem_src + c_interface_src,
-        dependencies: [cpp_dep] + netcdf_dep,
+        'adcprep',
+        sources: adcprep_src,
+        dependencies: adcprep_dep,
+        fortran_args: adcprep_args,
+        c_args: extra_adcprep_args,
+        link_language: 'fortran' # have to specify link_language to avoid meson trying to link with C compiler
+    )
+
+    # Post-processing program
+    executable(
+        'adcpost',
+        sources: adcpost_src,
         link_language: 'fortran'
     )
 endif
-
-# Parallel DGSWEM Main Program
-if get_option('parallel')
-    mpi_dep = dependency('mpi', language: 'fortran')
-    if get_option('netcdf')
-        executable(
-            'dgswem',
-            sources: dgswem_src + mpi_handlers + c_interface_src + ncdg_src +
-                dgswem_netcdf_src + piodg_src + dgswem_pio_src,
-            dependencies: [mpi_dep] + cpp_dep + netcdf_dep + pio_dep,
-            link_language: 'fortran',
-            fortran_args: ['-DCMPI', '-DNETCDF']
-        )
-      else
-        executable(
-            'dgswem',
-            sources: dgswem_src + mpi_handlers + c_interface_src,
-            dependencies: [mpi_dep] + cpp_dep,
-            fortran_args: '-DCMPI',
-            link_language: 'fortran'
-        )
-    endif
-endif
-
-# Pre-processing program
-if get_option('netcdf')
-    executable(
-        'adcprep',
-        sources: prep_src + ncdg_src + prep_netcdf_src,
-        dependencies: [metis_dep] + netcdf_dep,
-        c_args: extra_adcprep_args,
-        link_language: 'fortran', # have to specify link_language to avoid meson trying to link with C compiler
-        fortran_args: ['-DNETCDF']
-    )
-else
-    executable(
-        'adcprep',
-        sources: prep_src,
-        dependencies: [metis_dep],
-        c_args: extra_adcprep_args,
-        link_language: 'fortran', # have to specify link_language to avoid meson trying to link with C compiler
-    )
-endif
-
-# Post-processing program
-executable(
-    'adcpost',
-    sources: post_src,
-    # dependencies: netcdf_dep,
-    link_language: 'fortran'
-)
