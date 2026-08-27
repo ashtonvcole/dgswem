@@ -23,6 +23,7 @@ C
 C***********************************************************************
 C
       USE GLOBAL
+      use constants
       USE HARM
       USE WIND
       !USE SED

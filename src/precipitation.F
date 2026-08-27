@@ -118,7 +118,8 @@ C***********************************************************************
 
       SUBROUTINE UPDATE_PREC(i, lat, lon, cLon, cLat, Pn, Pc, rmx, Vmax, model_type)
 !$acc routine
-        use global, only : Rearth, deg2rad, DTDP, rad2deg
+        use global, only : DTDP
+        use constants, only : rearth, deg2rad, rad2deg
         use vortex
         use DG, only : IRK
         implicit none

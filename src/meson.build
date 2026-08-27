@@ -5,6 +5,7 @@ dgswem_src = files([
 'DG_timestep.F',
 'LDG_hydro.F',
 'calc_normal.F',
+'constants.f90',
 'couple2swan.F',
 'create_edge_data.F',
 'cstart.F',

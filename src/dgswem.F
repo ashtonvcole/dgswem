@@ -14,6 +14,7 @@ C     sb-disabled for Linux&Intel compiler
       USE DFPORT
 #endif
       USE GLOBAL
+      use constants
       USE HARM
       USE DG
       USE NodalAttributes, ONLY :

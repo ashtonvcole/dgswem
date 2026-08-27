@@ -3,6 +3,7 @@
 C.....Use appropriate modules
 
       USE GLOBAL
+      use constants
       USE DG
       use mod_numerical_flux
 

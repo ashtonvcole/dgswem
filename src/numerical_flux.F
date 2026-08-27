@@ -1430,6 +1430,7 @@ C***********************************************************************
 C.....Use appropriate modules
 
       USE GLOBAL
+      use constants
       USE DG
       use sizes, only: layers
 

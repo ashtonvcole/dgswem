@@ -61,9 +61,10 @@
       !=================================================================
       MODULE VORTEX
       USE SIZES, ONLY : sz
-      USE GLOBAL, ONLY : sphericalDistance, deg2rad, rad2deg,
-     &                   omega, mb2pa, rhoAir, kt2ms, nm2m, m2nm,
-     &                   ms2kt, Rearth, windReduction, one2ten
+      USE GLOBAL, ONLY : sphericalDistance
+      use constants, only : deg2rad, rad2deg,
+     &    omega, mb2pa, rhoair, kt2ms, nm2m, m2nm,
+     &    ms2kt, rearth, windreduction, one2ten
       IMPLICIT NONE
 
       PUBLIC :: newVortex, calcRmaxes, fitRmaxes, rotate,

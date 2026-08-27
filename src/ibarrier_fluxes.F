@@ -22,6 +22,7 @@ C***********************************************************************
 C.....Use appropriate modules
 
       USE GLOBAL
+      use constants
       USE DG
 
       IMPLICIT NONE

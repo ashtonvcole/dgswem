@@ -2675,8 +2675,11 @@ C     ----------------------------------------------------------------
 C      , ONLY : newVortex, setRmaxes,
 C     &  fitRmaxes, uvp, getLatestRmax, getLatestAngle
       USE GLOBAL, ONLY : ScreenUnit,
-     &    Rearth, pi, deg2rad, rad2deg, e, PRBCKGRND, g, rhoWat0,
-     &    sphericalDistance, rhoAir, one2ten, windReduction
+     &    g, rhoWat0,
+     &    sphericalDistance
+      use constants, only : rearth,
+     &    pi, deg2rad, rad2deg, e, prbckgrnd, rhoair, one2ten,
+     &    windreduction
       USE PRECIPITATION, only : UPDATE_PREC
       USE DG, only : rainfall
       IMPLICIT NONE
@@ -3188,9 +3191,12 @@ C***********************************************************************
       USE VORTEX, ONLY : setVortex, fitRmaxes4,  uvpr, spInterp,
      &                   Rmaxes4, QuadFlag4, QuadIr4, Bs4, VmBL4
       USE GLOBAL, ONLY : ScreenUnit,
-     &    Rearth, pi, deg2rad, rad2deg, e, PRBCKGRND, g, rhoWat0,
-     &    sphericalDistance, rhoAir, one2ten, windReduction,
-     &    kt2ms, nm2m,deg2rad,omega, Rearth, m2nm, mb2pa, rnday
+     &    g, rhoWat0, sphericalDistance, rnday
+      use constants, only : rearth,
+     &    pi, deg2rad, rad2deg, e, prbckgrnd, rhoair, one2ten,
+     &    windreduction, kt2ms, nm2m, deg2rad, omega, Rearth, m2nm, mb2pa
+
+
       USE PRECIPITATION, ONLY : update_prec
       USE DG, only : rainfall
       IMPLICIT NONE

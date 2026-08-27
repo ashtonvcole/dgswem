@@ -19,6 +19,7 @@ C**************************************************************************
 C 
       MODULE GLOBAL
       USE SIZES
+      use constants
 C...
 C...SET GLOBAL PARAMETER CONSTANTS
 C...
@@ -60,34 +61,6 @@ Casey 121128: Added variables for the output of global files from SWAN.
 
       Logical vertexslope
 
-C.....Background Atmospheric Pressure in mb
-      REAL(SZ), PARAMETER :: PRBCKGRND = 1013.0   !tcm 20100617 v49.16 Added
-      real(sz) :: rhoAir = 1.15d0         ! kg/m^3
-      real(sz) :: windReduction = 0.9d0
-      real(sz) :: one2ten = 0.8928d0
-      real(sz) :: ten2one = 1.0/0.8928d0
-Casey 121019: Added multiplication factor to be used before sending winds to coupled wave models.
-      REAL(SZ) :: WaveWindMultiplier = 1.0
-C.....PI etc
-      real(sz), PARAMETER ::  PI=3.141592653589793D0
-      real(sz), PARAMETER ::  DEG2RAD = PI/180.0  ! degrees to radians
-      real(sz), PARAMETER ::  RAD2DEG = 180.0/PI  ! radians to degrees
-      real(sz), PARAMETER ::  e=2.718281828459045d0
-C.....Days to seconds conversion
-      real(sz), PARAMETER :: day2sec=24.0*3600.0
-      real(sz), PARAMETER :: sec2day=1.0/day2sec
-      ! jgf50.38.03: Additional useful constants
-      real(sz), PARAMETER :: Rearth = 6378206.4d0 ! radius of earth (m)
-      real(sz), PARAMETER :: nm2m = 1852.0 ! nautical miles to meters
-      real(sz), PARAMETER :: m2nm = 1.0/nm2m ! meters to nautical miles
-      real(sz), PARAMETER :: kt2ms = nm2m / 3600.0 ! knots to m/s
-      real(sz), PARAMETER :: ms2kt = 1.0 / kt2ms ! m/s to knots
-      real(sz), PARAMETER :: omega = 2.0*pi / 86164.2d0
-      real(sz), PARAMETER :: mb2pa = 100.0
-
-C.....parameters used in barrier overflow
-      REAL(SZ), PARAMETER ::  BARMIN=0.01D0
-      REAL(SZ) DEPAVG,DEPMAX,DEPMIN
 C
 C.....Sediment Transport stuff added (Ethan Kubatko 8-1-2003)
 C

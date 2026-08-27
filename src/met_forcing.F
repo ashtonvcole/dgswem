@@ -10,6 +10,7 @@ C***********************************************************************
       SUBROUTINE MET_FORCING(IT)
       
       USE GLOBAL
+      use constants
       USE DG
       USE HARM
       USE SIZES

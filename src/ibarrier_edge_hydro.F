@@ -23,6 +23,7 @@ C***********************************************************************
 C.....Use appropriate modules
 
       USE GLOBAL
+      use constants
       USE DG
       USE SIZES, ONLY:  MYPROC, layers
       use mod_numerical_flux

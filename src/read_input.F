@@ -13,6 +13,7 @@ C***********************************************************************
 C.....Use appropriate modules
 
       USE GLOBAL
+      use constants
       USE HARM
       USE WIND
       USE DG

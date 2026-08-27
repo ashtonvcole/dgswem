@@ -71,8 +71,9 @@ C.....Use appropriate modules
 #else
       USE SIZES, ONLY : SZ,layers
 #endif
-      USE GLOBAL, ONLY : NE,NM,DP,X,Y,SLAM,SFEA,DEG2RAD,tracer_flag,
+      USE GLOBAL, ONLY : NE,NM,DP,X,Y,SLAM,SFEA,tracer_flag,
      & chem_flag,pdg_el
+      use constants, only : deg2rad
       USE DG, ONLY : DOF,ZE,QX,QY,iota,iota2,dynP,bed,ncheck,dp_node
 
       IMPLICIT NONE
