@@ -1,0 +1,45 @@
+relevant variables
+tz(dof,:,:,ele): gradient of concentration
+entrop(4,:)
+iota_in(): concentration value at interior element Gauss point
+iota_ex(): concentration value at exterior element Gauss point
+iota(dof, ele, rk): concentration element modal/RK coefficient
+phi_edge(dof, gp, ??, ??): shape function at element edge
+iota_avg: average maybe? but not done right? upwinding? used for edge integral
+slimit4
+iota_sensor1
+iota_sensor2
+phi_area
+wagp
+tz_x_in
+gradiota
+diotadr
+diotads
+diotadx
+diotady
+iotalim
+iotataylor
+iotataylorvert
+iotamax
+iotamin
+xi1vert
+xi2vert
+xi1bcb
+xi2bcb
+alphaiota
+alphaiota0
+alphaiotam
+alphaiota_max
+limitiota
+iotaconst
+iota_min1
+iota_max1
+iota_dg
+zec
+zemax1
+zemin1
+zevertex
+rhs_iota_in
+rhs_iota_ex
+i_hat
+j_hat
