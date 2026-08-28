@@ -72,7 +72,6 @@ C.....Declare real variables
       REAL(SZ) WSX_GP, WSY_GP
       REAL(SZ) QMag_IN, QMag_EX
       Real(SZ) subphi_IN,subphi_EX
-      Real(SZ) iota_EX, iota_IN,iota2_EX, iota2_IN
 
 C     sb...Wetting and drying
       INTEGER, ALLOCATABLE :: WDFLG(:) ! = 1 if wet, =0 if dry
@@ -155,10 +154,19 @@ C.....Declare allocatable real arrays
       integer, allocatable :: elem_edge(:,:), nieds_count(:)
       Real(SZ), ALLOCATABLE, target:: bed(:,:,:,:)
       Real(SZ), Allocatable :: dynP(:,:,:),dynP_MAX(:), dynP_MIN(:)
-      Real(SZ), Allocatable :: iota(:,:,:),iotaa(:,:,:),iota2(:,:,:)
-      Real(SZ), Allocatable :: iota_MAX(:),iota_MIN(:),iotaa2(:,:,:),
-     & iotaa3(:,:,:)
-      Real(SZ), Allocatable :: iota2_MAX(:),iota2_MIN(:)
+      real(sz), allocatable :: iota(:,:,:)
+C! Modal coefficients of conservative tracer mass iota = c * h. Indices are
+C! (mode, ele, rk). Dimensions are (dofh, mne, nrk + 2).
+      real(sz), allocatable :: iota2(:,:,:)
+C! Modal coefficients of second conservative tracer mass iota2 = c2 * h.
+C! Indices are (mode, ele, rk). Dimensions are (dofh, mne, nrk + 2).
+      real(sz), allocatable :: iota_max(:)
+      real(sz), allocatable :: iota_min(:)
+      real(sz), allocatable :: iota2_max(:)
+      real(sz), allocatable :: iota2_min(:)
+      real(sz), allocatable :: iotaa(:,:,:)
+      real(sz), allocatable :: iotaa2(:,:,:)
+      real(sz), allocatable :: iotaa3(:,:,:)
       Real(SZ), pointer :: arrayfix(:,:,:)
       REAL(SZ), ALLOCATABLE :: CORI_EL(:), FRIC_EL(:)
       REAL(SZ), ALLOCATABLE :: ZE_MAX(:),ZE_MIN(:),DPE_MIN(:)
@@ -170,8 +178,13 @@ C.....Declare allocatable real arrays
       REAL(SZ), ALLOCATABLE :: QNAM_DG(:,:,:), QNPH_DG(:,:,:)
       REAL(SZ), ALLOCATABLE :: RHS_ZE(:,:,:), RHS_bed(:,:,:,:)
       REAL(SZ), ALLOCATABLE :: RHS_QX(:,:,:),RHS_QY(:,:,:)
-      Real(SZ), Allocatable :: RHS_iota(:,:,:),RHS_iota2(:,:,:),
-     & RHS_dynP(:,:,:)
+      real(sz), allocatable :: rhs_iota(:,:,:)
+C! Right-hand side for iota. Indices are (mode, ele, rk). Dimensions are
+C! (dofh, mne, nrk).
+      real(sz), allocatable :: rhs_iota2(:,:,:)
+C! Right-hand side for iota2. Indices are (mode, ele, rk). Dimensions are
+C! (dofh, mne, nrk).
+      real(sz), allocatable :: RHS_dynP(:,:,:)
       Real(SZ), Allocatable :: RHS_bed_IN(:,:),RHS_bed_EX(:,:),
      & bed_HAT_O(:)
       REAL(SZ), ALLOCATABLE :: XAGP(:,:), YAGP(:,:), WAGP(:,:)
