@@ -1,25 +1,25 @@
 C***********************************************************************
-C     
+C
 C     MODULE DG
-C     
+C
 C     This module declares all the necessary variables for DG
-C     
+C
 C     Written by Ethan Kubatko (3-10-05)
-C     
+C
 C-----------------------------------------------------------------------
-C     
+C
 C     Modification history after v9_sb1
-C     
+C
 C     v9_sb1     - 08/05    - sb - Parallel runs
 C     v9_sb2     - 08/05    - sb - Wetting and drying
 C     v9_sb2.2.1 - 08/16/05 - sb - Hard bottom implementation
 C     v10_sb5      - Oct 03 - sb - Consolidate Ethan's slope limiter
 C     Moving to versioning repo now
-C     
+C
 C***********************************************************************
 
       MODULE DG
-      
+
 C.....Use appropriate modules
 
       USE SIZES
@@ -27,6 +27,19 @@ C.....Use appropriate modules
 
 C.....Declare integer variables
       INTEGER, TARGET :: rainfall
+C!    Whether to use precipitation data.
+C!    - 1 is constant 1 in/s
+C!    - 2 is OWI fort.27, fort.425, fort.427
+C!    - 3 is parametric R-CLIPPER model
+C!    - 4 is parametric IPET model
+      real(sz), target :: rtiminc
+C!    Fixed time increment for rainfall.
+      integer, target :: rexneg
+C!    Whether to exclude negative values (land flag) for rainfall. 0 is false.
+C!    Anything else is true.
+      integer, target :: rusemmhr
+C!    Whether to use mm/hr for OWI precipitation input files. 0 is false.
+C!    Anything else is true.
       INTEGER, TARGET :: DGFLAG,DGHOT,DGHOTSPOOL
       INTEGER DOF,dofh,dofl,dofx
       INTEGER EL
@@ -46,7 +59,7 @@ C.....Declare integer variables
       Integer, TARGET :: padapt,pflag,pl,ph,px,lebesgueP, gflag
       INTEGER pa
       logical init_parser,stblzr
-c     
+c
       integer iwrite
 
 C.....Declare real variables
@@ -98,7 +111,7 @@ C.....Declare real variable arrays
 
       REAL(SZ) DRPSI(3), DSPSI(3)
       REAL(SZ) VEC1(2), VEC2(2)
-      
+
 C.....Declare allocatable integer arrays
 
       INTEGER, ALLOCATABLE :: DOFS(:), PCOUNT(:), PDG(:)
@@ -114,7 +127,7 @@ C.....Declare allocatable integer arrays
 
 
 C.....Declare allocatable real arrays
-      
+
       REAL(SZ), ALLOCATABLE :: ATVD(:,:), BTVD(:,:), CTVD(:,:)
       REAL(SZ), ALLOCATABLE :: DTVD(:), MAX_BOA_DT(:),e1(:),balance(:)
       Real(SZ), Allocatable :: RKC_T(:),RKC_U(:),RKC_Tprime(:)
@@ -205,7 +218,7 @@ C.....These (below) are defined in prep_slopelim.F
       Real(SZ),Allocatable :: Nmatrix(:,:,:,:),NmatrixInv(:,:,:,:)
       Real(SZ),Allocatable :: deltx(:),delty(:),pmatrix(:,:,:)
 
-C.....These (below) are defined in slopelimiter.F 
+C.....These (below) are defined in slopelimiter.F
 
 
       Real(SZ),Allocatable :: ZEmin(:,:),ZEmax(:,:),QXmin(:,:)
@@ -236,11 +249,11 @@ C.....These (below) are defined in slopelimiter.F
       Real(SZ),Allocatable :: iotaconst(:,:),iota2const(:,:)
 #endif
 
-    
+
 C**********************END OF DATA DECLARATIONS ***********************
 
       CONTAINS
-      
+
 C.....Set edge array sizes
 
       SUBROUTINE ALLOC_EDGES0()
@@ -261,7 +274,7 @@ C.....Set edge array sizes
       ALLOCATE ( Q_HAT(MNED) )
       RETURN
       END SUBROUTINE
-      
+
 C.....Set DG SWE array sizes
 
       SUBROUTINE ALLOC_DG1(MNBFR)
@@ -270,12 +283,12 @@ C.....Set DG SWE array sizes
       ALLOCATE ( VFA_DG(MNBFR,NEEDS+2,2), VMO_DG(MNBFR,NEEDS+2,2) )
       RETURN
       END SUBROUTINE
-      
+
       SUBROUTINE ALLOC_DG2(MNFFR)
       ALLOCATE ( QNAM_DG(MNFFR,NFEDS,2), QNPH_DG(MNFFR,NFEDS,2) )
       RETURN
       END SUBROUTINE
-      
+
       SUBROUTINE ALLOC_DG3(MNP)
       ALLOCATE ( QIB(MNP) )
       RETURN
@@ -287,8 +300,8 @@ Csb-20070228 NRK+1-->NRK+2 --- XX(:,:,NRK+2) will be used by slope limiter
       ALLOCATE ( MANN(DOFH,MNE) ) !,arrayfix(DOFH,MNE,NRK+2) )
       ALLOCATE ( QY(DOFH,MNE,NRK+2), QX(DOFH,MNE,NRK+2) )
       ALLOCATE ( ZE(DOFH,MNE,NRK+2), bed(DOFH,MNE,NRK+2,layers) )
-      Allocate ( iota(DOFH,MNE,NRK+2),iota2(DOFH,MNE,NRK+2) ) 
-      Allocate ( dynP(DOFH,MNE,NRK+2) ) 
+      Allocate ( iota(DOFH,MNE,NRK+2),iota2(DOFH,MNE,NRK+2) )
+      Allocate ( dynP(DOFH,MNE,NRK+2) )
       Allocate ( iotaa(DOFH,MNE,NRK+2),iotaa2(DOFH,MNE,NRK+2) )
       Allocate ( iotaa3(DOFH,MNE,NRK+2) )
 Csb-20060711 For wet/dry
@@ -351,9 +364,9 @@ C.....Set sizes for arrays used in orthobasis
       ALLOCATE ( PHI_CORNER1(ph+1,ph+1,3,ph) )
       RETURN
       END SUBROUTINE
-      
+
 C.....Set sizes for arrays for area integrals
-      
+
       SUBROUTINE ALLOC_AREA_GAUSS()
       ALLOCATE ( XAGP(NAGP(ph),ph),YAGP(NAGP(ph),ph),WAGP(NAGP(ph),ph) )
       ALLOCATE ( PHI_AREA(DOFH,NAGP(ph)+1,ph ) )
@@ -368,7 +381,7 @@ C.....Set sizes for arrays for area integrals
       ALLOCATE ( SRFAC(DOFH,NAGP(ph),MNE,ph) )
       RETURN
       END SUBROUTINE
-      
+
 C.....Set sizes for arrays for edge integrals
 
       SUBROUTINE ALLOC_EDGE_GAUSS()
@@ -400,7 +413,7 @@ C.....These are defined in prep_slopelim.F
       Allocate ( Area_integral(MNE,0:ph,0:ph) )
       Allocate ( f(MNE,NAGP(ph),0:ph,0:ph),g0(MNE,NAGP(ph),0:ph,0:ph) )
       Allocate ( fv(MNE,3,0:ph,0:ph),g0v(MNE,3,0:ph,0:ph) )
-      Allocate ( varsigma0(MNE,NAGP(ph),0:ph,0:ph) ) 
+      Allocate ( varsigma0(MNE,NAGP(ph),0:ph,0:ph) )
       Allocate ( varsigma0v(MNE,3,0:ph,0:ph) )
       Allocate ( pmatrix(MNE,dofh,dofh), var2sigmag(MNE,NAGP(ph),dofh) )
       Allocate ( Nmatrix(MNE,dofh,dofh,dofh),
@@ -408,7 +421,7 @@ C.....These are defined in prep_slopelim.F
       Allocate ( deltx(MNE),delty(MNE),var2sigmav(MNE,3,dofh))
 
 C.....These (below) are defined in slopelimiter.F (slopelimiter4)
-      
+
       Allocate ( ZEmin(MNP,dofh),ZEmax(MNP,dofh),QXmin(MNP,dofh) )
       Allocate ( QXmax(MNP,dofh),QYmin(MNP,dofh),QYmax(MNP,dofh) )
       Allocate ( iotamin(MNP,dofh),iotamax(MNP,dofh) )
@@ -418,7 +431,7 @@ C.....These (below) are defined in slopelimiter.F (slopelimiter4)
       Allocate ( XBCv(MNE,MNE),YBCv(MNE,MNE) )
       Allocate ( xi1BCv(MNE,MNE),xi2BCv(MNE,MNE))
       Allocate ( ZEtaylor(MNE,dofh,1),QXtaylor(MNE,dofh,1) )
-      Allocate ( iotataylor(MNE,dofh,1),iota2taylor(MNE,dofh,1) 
+      Allocate ( iotataylor(MNE,dofh,1),iota2taylor(MNE,dofh,1)
       Allocate ( ZEtaylorvert(MNE,dofh,3),QXtaylorvert(MNE,dofh,3) )
       Allocate ( QYtaylorvert(MNE,dofh,3),iotataylorvert(MNE,dofh,3) )
       Allocate ( iota2taylorvert(MNE,dofh,3), QYtaylor(MNE,dofh,1) )
@@ -455,19 +468,17 @@ Csb...Set sizes for arrays for wetting and drying
       ALLOCATE ( PSI_CHECK(3,12*3) )
       RETURN
       END SUBROUTINE
-      
+
 
       SUBROUTINE ALLOC_STAE(L)
       ALLOCATE ( PHI_STAE(DOFH,L) )
       RETURN
       END SUBROUTINE
-      
+
       SUBROUTINE ALLOC_STAV(L)
       ALLOCATE ( PHI_STAV(DOFH,L) )
       RETURN
       END SUBROUTINE
-      
+
 
       END MODULE DG
-
-

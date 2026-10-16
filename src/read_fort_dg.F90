@@ -1,12 +1,12 @@
       MODULE FORT_DG
-      
+
       ! Module containing subroutines to read the fort.dg file
       !
       !  - Supports both fixed and keyword formats
       !
       !  - Keyword format is intended to increase flexibility in adding/depreciating features
-      !    while maintaining forward compatibility and some degree of backward compatibility 
-      !    for the fort.dg file.  
+      !    while maintaining forward compatibility and some degree of backward compatibility
+      !    for the fort.dg file.
       !
       !      * The keywords are configured in the FORT_DG_SETUP subroutine.
       !        (See subrotine header for details.)
@@ -19,14 +19,14 @@
       !          4) line beginning with ! indicates a comment
       !          5) blank lines are skipped
       !          6) comments may follow an assignment (e.g. fluxtype = 1 !comment)
-      !          7) unrecognized keyword assignments are skipped      
-      !          8) unassigned options that are not required will use 
+      !          7) unrecognized keyword assignments are skipped
+      !          8) unassigned options that are not required will use
       !             default values specified in FORT_DG_SETUP
-      !          
+      !
       !  - Subroutines contained are:
       !
       !      1) READ_FIXED_FORT_DG
-      !         
+      !
       !         * reads old fixed format fort.dg used in dgswem v11.13/dg-adcirc v22
       !
       !      2) READ_KEYWORD_FORT_DG
@@ -35,43 +35,43 @@
       !
       !      3) CHECK_ERRORS
       !
-      !         * Handles missing options 
+      !         * Handles missing options
       !         * Terminates if required options are missing
-      !         * Warns that default values are used for missing optional options and continues      
+      !         * Warns that default values are used for missing optional options and continues
       !
       !      4) FORT_DG_SETUP
       !
       !         * Responsible for configuring fort.dg options
       !         * MODIFICATIONS FOR ADDITION/REMOVAL OF FORT.DG OPTIONS SHOULD BE DONE HERE
-      
+
       USE sizes, ONLY: sz
-      
+
       TYPE :: key_val
         CHARACTER(15) :: key            ! keyword
         REAL(SZ), POINTER :: rptr       ! pointer to real target
         INTEGER, POINTER :: iptr        ! pointer to integer target
-        CHARACTER(100), POINTER :: cptr ! pointer to character target      
-        
+        CHARACTER(100), POINTER :: cptr ! pointer to character target
+
         INTEGER :: vartype              ! target type indicator: 1=integer, 2=real, 3=character
-        
+
         INTEGER :: required             ! required/optional flag
-        
+
         INTEGER :: flag                 ! successful read flag
       END TYPE key_val
-      
+
       INTEGER, PARAMETER :: maxopt = 100          ! maximum allowable fort.dg options
-      TYPE(key_val), DIMENSION(maxopt) :: fortdg      
-      
+      TYPE(key_val), DIMENSION(maxopt) :: fortdg
+
       INTEGER :: nopt                             ! number of valid options in fortdg structure
       INTEGER, DIMENSION(maxopt) :: fortdg_ind    ! indicies of valid options in fortdg structure
- 
-      CONTAINS            
-      
+
+      CONTAINS
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!      
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
       SUBROUTINE READ_FIXED_FORT_DG()
-      
+
       USE global, ONLY: dgswe,dg_to_cg,sedflag,reaction_rate,sed_equationX,sed_equationY, &
                         rhowat0,vertexslope
       USE sizes, ONLY: myproc,layers,dirname
@@ -79,31 +79,31 @@
                     pflag2con1,pflag2con2,lebesgueP,fluxtype,rk_stage,rk_order, &
                     modal_ic,dghot,dghotspool,slopeflag,slope_weight,porosity, &
                     sevdm,mnes,artdif,kappa,s0,uniform_dif,tune_by_hand, &
-                    sl2_m,sl2_nyu,sl3_md, rainfall
-            
-      
+                    sl2_m,sl2_nyu,sl3_md, rainfall, rtiminc, rexneg, rusemmhr
+
+
       IMPLICIT NONE
-      
+
       INTEGER :: i
       CHARACTER(256) :: LINE
-      
-      CALL FORT_DG_SETUP()      
 
-      OPEN(25,FILE=DIRNAME//'/'//'fort.dg',POSITION="rewind")  
-      
+      CALL FORT_DG_SETUP()
+
+      OPEN(25,FILE=DIRNAME//'/'//'fort.dg',POSITION="rewind")
+
       IF (myproc == 0) THEN
         PRINT*, ""
         PRINT("(A)"), "READING FIXED FORMAT FORT.DG..."
-        PRINT*, ""      
+        PRINT*, ""
       ENDIF
-      
+
       READ(25,*) DGSWE
       READ(25,*) padapt,pflag
       READ(25,*) gflag,diorism
       READ(25,*) pl,ph,px
       READ(25,*) slimit
       READ(25,*) plimit
-      READ(25,*) pflag2con1,pflag2con2,lebesgueP 
+      READ(25,*) pflag2con1,pflag2con2,lebesgueP
       READ(25,*) FLUXTYPE
       READ(25,*) RK_STAGE, RK_ORDER
       READ(25,*) DG_TO_CG
@@ -151,172 +151,172 @@
       READ(25,*) artdif,kappa,s0,uniform_dif,tune_by_hand
       READ(25,'(a)') sed_equationX
       READ(25,'(a)') sed_equationY
-      
+
       IF(FLUXTYPE.NE.1.AND.FLUXTYPE.NE.2.AND.FLUXTYPE.NE.3.AND.FLUXTYPE.NE.4) THEN
-         IF (myproc == 0) THEN 
+         IF (myproc == 0) THEN
            PRINT *, 'SPECIFIED FLUXTYPE (=', FLUXTYPE,') IS NOT ALLOWED.'
            PRINT *, 'EXECUTION WILL BE TERMINATED.'
-         ENDIF 
-         
-         STOP 
-      ENDIF     
-      
+         ENDIF
+
+         STOP
+      ENDIF
+
       ! print inputs
       IF (myproc == 0) THEN
-        DO i = 1,maxopt        
-          IF (ASSOCIATED(fortdg(i)%iptr)) THEN  
+        DO i = 1,maxopt
+          IF (ASSOCIATED(fortdg(i)%iptr)) THEN
             PRINT("(A,A,I8)"), fortdg(i)%key," = ",fortdg(i)%iptr
           ENDIF
-        
-          IF (ASSOCIATED(fortdg(i)%rptr)) THEN 
+
+          IF (ASSOCIATED(fortdg(i)%rptr)) THEN
             PRINT("(A,A,E21.8)"), fortdg(i)%key," = ",fortdg(i)%rptr
           ENDIF
-        
-          IF (ASSOCIATED(fortdg(i)%cptr)) THEN 
-            PRINT("(A,A,A)"), fortdg(i)%key," = ",fortdg(i)%cptr 
+
+          IF (ASSOCIATED(fortdg(i)%cptr)) THEN
+            PRINT("(A,A,A)"), fortdg(i)%key," = ",fortdg(i)%cptr
           ENDIF
-        ENDDO      
+        ENDDO
         PRINT*, " "
-      ENDIF 
-      
+      ENDIF
+
       CLOSE(25)
-      
+
       RETURN
       END SUBROUTINE READ_FIXED_FORT_DG
-      
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
- 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
       SUBROUTINE READ_KEYWORD_FORT_DG()
-      
+
       USE sizes, ONLY: myproc,dirname
       USE global, ONLY: nfover
 
       IMPLICIT NONE
-      
+
       INTEGER :: i,j,opt
       INTEGER :: read_stat
       INTEGER :: opt_read
       INTEGER :: comment,blank
       INTEGER :: eqind,exind
-      INTEGER :: found      
+      INTEGER :: found
       CHARACTER(100) :: temp,line,empty
       CHARACTER(15) :: test_opt
       CHARACTER(100) :: test_val
-      
+
       ! initialize the fortdg option structure
       CALL FORT_DG_SETUP()
-      
+
       opt_read = 0
-      comment = 0 
+      comment = 0
       blank = 0
-      
-      
-      OPEN(25,FILE=DIRNAME//'/'//'fort.dg',POSITION="rewind")   
+
+
+      OPEN(25,FILE=DIRNAME//'/'//'fort.dg',POSITION="rewind")
       IF (myproc == 0) THEN
         PRINT*, ""
         PRINT("(A)"), "READING KEYWORD FORMAT FORT.DG..."
         PRINT*, ""
       ENDIF
-     
-      
+
+
       DO WHILE (opt_read < nopt)
-      
+
         READ(25,"(A100)",IOSTAT=read_stat) temp
         IF(read_stat /= 0) THEN                    ! check for end-of-file
           EXIT
         ENDIF
-        
+
         line = ADJUSTL(temp)
-        
+
         IF(INDEX(line,"!") == 1) THEN              ! lines beginning with ! are skipped
-        
+
           comment = comment + 1
-          
+
         ELSE IF (LEN(TRIM(line)) == 0) THEN        ! blank lines are skipped
-        
+
           blank = blank + 1
-          
+
         ELSE
-  
+
           ! determine keyword and assignment value
           eqind = INDEX(line,"=")
           exind = INDEX(line,"!")
           test_opt = line(1:eqind-1)
-          IF (exind > 0) THEN                          ! handle trailing comment 
+          IF (exind > 0) THEN                          ! handle trailing comment
             test_val = ADJUSTL(line(eqind+1:exind-1))  ! (only necessary if there is no space between value and the !)
           ELSE
             test_val = ADJUSTL(line(eqind+1:))
-          ENDIF         
-          
+          ENDIF
+
           ! Look for a match for the keyword
           found = 0
     test: DO opt = 1,nopt
-    
-            i = fortdg_ind(opt)    
-    
+
+            i = fortdg_ind(opt)
+
             IF (test_opt == fortdg(i)%key) THEN
-              
+
               ! Set variables equal to value from fort.dg through pointer using an internal read
-              SELECT CASE (fortdg(i)%vartype) 
+              SELECT CASE (fortdg(i)%vartype)
                 CASE(1)
                   READ(test_val,*) fortdg(i)%iptr
                   IF (myproc == 0) PRINT("(A,A,I8)"), test_opt," = ",fortdg(i)%iptr
                 CASE(2)
                   READ(test_val,*) fortdg(i)%rptr
-                  IF (myproc == 0) PRINT("(A,A,E21.8)"), test_opt," = ",fortdg(i)%rptr                  
+                  IF (myproc == 0) PRINT("(A,A,E21.8)"), test_opt," = ",fortdg(i)%rptr
                 CASE(3)
                   fortdg(i)%cptr = TRIM(test_val)
-                  IF (myproc == 0) PRINT("(A,A,A)"), test_opt," = ",fortdg(i)%cptr                  
+                  IF (myproc == 0) PRINT("(A,A,A)"), test_opt," = ",fortdg(i)%cptr
               END SELECT
 
               found = 1          ! flag match
               opt_read = opt_read + 1
               fortdg(i)%flag = 1      ! flag option as found
-              
+
               EXIT test
-              
+
             ENDIF
           ENDDO test
-               
-          IF (myproc == 0 ) THEN     
+
+          IF (myproc == 0 ) THEN
             IF (found == 0 .and. eqind > 0) THEN
               ! unmatched lines with an equal sign are either incorrect or no longer supported
-              PRINT("(3A)"),"*** WARNING: ",test_opt, " is an incorrect or depreciated value ***"            
+              PRINT("(3A)"),"*** WARNING: ",test_opt, " is an incorrect or depreciated value ***"
             ELSE IF (found == 0) THEN
               ! unmatched lines without an equal sign are ignored
-              PRINT("(A)"), "*** WARNING: non-comment line does not contain a keyword assignment***"           
+              PRINT("(A)"), "*** WARNING: non-comment line does not contain a keyword assignment***"
             ENDIF
-          ENDIF 
-           
+          ENDIF
+
         ENDIF
-      ENDDO 
-      
+      ENDDO
+
       IF (myproc == 0) PRINT*, ""
-     
+
       CALL CHECK_ERRORS(opt_read)
-      
+
       IF (myproc == 0) PRINT*, ""
       CLOSE(25)
-            
+
       END SUBROUTINE READ_KEYWORD_FORT_DG
-      
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
      SUBROUTINE CHECK_ERRORS(opt_read)
-     
-      USE sizes, ONLY: myproc     
-     
+
+      USE sizes, ONLY: myproc
+
      IMPLICIT NONE
-     
+
      INTEGER :: i,j,opt
      INTEGER :: opt_read
      INTEGER :: quit
-     
+
      IF(opt_read /= nopt) THEN
 
-       ! check for required options that are unspecifed 
+       ! check for required options that are unspecifed
        quit = 0
        DO opt = 1,nopt
          i = fortdg_ind(opt)
@@ -324,127 +324,127 @@
            quit = 1   ! flag fatal error
          ENDIF
        ENDDO
-        
+
        IF (quit == 1) THEN
-        
+
           IF (myproc == 0) THEN
-            PRINT("(A)"), "*** ERROR: There are missing required options in the fort.dg file ***"  
-            PRINT("(A)"), "           The following options must be specified: "      
-            j = 0        
+            PRINT("(A)"), "*** ERROR: There are missing required options in the fort.dg file ***"
+            PRINT("(A)"), "           The following options must be specified: "
+            j = 0
             DO opt = 1,nopt
               i = fortdg_ind(opt)
               IF ((fortdg(i)%flag == 0) .and. (fortdg(i)%required == 1)) THEN
                 j = j+1
                 PRINT "(A,I3,2A)", "              ",j,") ",fortdg(i)%key
               ENDIF
-            ENDDO          
-          
+            ENDDO
+
             PRINT("(A)"), "!!!!!! EXECUTION WILL NOW BE TERMINATED !!!!!!"
           ENDIF
-          
+
           STOP
-          
+
        ELSE
-        
+
           IF (myproc == 0) THEN
             PRINT("(A)"), "*** WARNING: There are missing optional options in the fort.dg file ***"
-            PRINT("(A)"), "             The following default values will be used: "    
-            j = 0        
+            PRINT("(A)"), "             The following default values will be used: "
+            j = 0
             DO opt = 1,nopt
               i = fortdg_ind(opt)
               IF ((fortdg(i)%flag == 0) .and. (fortdg(i)%required == 0)) THEN
-              
+
                 j = j+1
-                SELECT CASE (fortdg(i)%vartype) 
+                SELECT CASE (fortdg(i)%vartype)
                   CASE(1)
                     PRINT("(A,I3,A,A,A,I8)"),     "              ",j,") ",fortdg(i)%key," = ",fortdg(i)%iptr
                   CASE(2)
-                    PRINT("(A,I3,A,A,A,E21.8)"),  "              ",j,") ",fortdg(i)%key," = ",fortdg(i)%rptr                  
+                    PRINT("(A,I3,A,A,A,E21.8)"),  "              ",j,") ",fortdg(i)%key," = ",fortdg(i)%rptr
                   CASE(3)
-                    PRINT("(A,I3,A,A,A,A)"),      "              ",j,") ",fortdg(i)%key," = ",fortdg(i)%cptr                  
+                    PRINT("(A,I3,A,A,A,A)"),      "              ",j,") ",fortdg(i)%key," = ",fortdg(i)%cptr
                 END SELECT
-              
+
               ENDIF
-            ENDDO 
-          
+            ENDDO
+
             PRINT("(A)"), '!!!!!! EXECUTION WILL CONTINUE !!!!!!!!'
           ENDIF
-          
-       ENDIF       
-                  
-     ENDIF        
-     
-     
+
+       ENDIF
+
+     ENDIF
+
+
      RETURN
      END SUBROUTINE CHECK_ERRORS
-      
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
-      
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
       SUBROUTINE FORT_DG_SETUP()
-      
+
       ! Subroutine that configures the fort.dg options
       !
-      !   This subroutine is meant to add flexibility in adding/depreciating  
-      !   features while maintaining forward (and some degree of backward) compatibility 
+      !   This subroutine is meant to add flexibility in adding/depreciating
+      !   features while maintaining forward (and some degree of backward) compatibility
       !
       !   - Options can be added to the fort.dg file by:
       !       1) Specifying a keyword in a unused index (<= maxopt) of the fortdg structure
       !       2) Associating the appropriate pointer with the corresponding variable
-      !          Note: pointer must agree with the associated variable type 
-      !                (iptr=integer, rptr=real, cptr=character)      
+      !          Note: pointer must agree with the associated variable type
+      !                (iptr=integer, rptr=real, cptr=character)
       !          Note: the associated variable must be declared using the TARGET attribute
       !       3) Specifying whether the variable is required (1 = yes, 0 = no)
       !       4) Providing a default value
-      ! 
+      !
       !   - Options can be removed from the fort.dg file by:
       !       1) Commenting out or deleting an existing entry in the fortdg structure
       !          Note: re-indexing subsequent entries is not necessary (see fortdg(17) below)
-      !       
+      !
       !       OR
       !
       !       2) Setting the fortdg(i)%required variable to 0
-      ! 
-      !   - New features should be added as fortdg(i)%required = 0 as much as possible 
-      !     to maintain backward compatibility, older fort.dg files not containing these 
-      !     options will cause provided default values to be used (these should be set so 
+      !
+      !   - New features should be added as fortdg(i)%required = 0 as much as possible
+      !     to maintain backward compatibility, older fort.dg files not containing these
+      !     options will cause provided default values to be used (these should be set so
       !     the feature is turned off)
       !
-      !   - fort.dg files containing new feature options can still be used for previous  
+      !   - fort.dg files containing new feature options can still be used for previous
       !     versions of the code because the new options will be ignored
-      
-      
+
+
       USE global, ONLY: dgswe,dg_to_cg,sedflag,reaction_rate,sed_equationX,sed_equationY
       USE sizes, ONLY: myproc,layers
       USE dg, ONLY: padapt,pflag,gflag,diorism,pl,ph,px,slimit,plimit, &
                     pflag2con1,pflag2con2,lebesgueP,fluxtype,rk_stage,rk_order, &
                     modal_ic,dghot,dghotspool,slopeflag,slope_weight,porosity, &
-                    sevdm,mnes,artdif,kappa,s0,uniform_dif,tune_by_hand,rainfall
-      
-      IMPLICIT NONE        
-      
+                    sevdm,mnes,artdif,kappa,s0,uniform_dif,tune_by_hand,rainfall,rtiminc,rexneg,rusemmhr
+
+      IMPLICIT NONE
+
       INTEGER :: i
       INTEGER :: ncheck
       CHARACTER(15) :: empty
       CHARACTER(28) :: sedXdef,sedYdef
-      
+
       ! initialize fortdg structure
       DO i = 1,maxopt
         NULLIFY(fortdg(i)%iptr)
         NULLIFY(fortdg(i)%rptr)
         NULLIFY(fortdg(i)%cptr)
-        
+
         fortdg(i)%key = empty
-        fortdg(i)%flag = 0        
+        fortdg(i)%flag = 0
       ENDDO
-      
+
       !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       ! Configure fort.dg options here:
       !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      
+
       sedXdef = "(ZE_ROE+bed_ROE)**-1 *QX_ROE"
       sedYdef = "(ZE_ROE+bed_ROE)**-1 *QY_ROE"
-      
+
       !    keywords                         target variables                      requirement                 default values
       fortdg(1)%key = "dgswe";          fortdg(1)%iptr => dgswe ;          fortdg(1)%required = 1;   fortdg(1)%iptr = 1
       fortdg(2)%key = "padapt";         fortdg(2)%iptr => padapt;          fortdg(2)%required = 1;   fortdg(2)%iptr = 0
@@ -481,59 +481,62 @@
       fortdg(33)%key = "tune_by_hand";  fortdg(33)%iptr => tune_by_hand;   fortdg(33)%required = 1;  fortdg(33)%iptr = 0
       fortdg(34)%key = "sed_equationX"; fortdg(34)%cptr => sed_equationX;  fortdg(34)%required = 0;  fortdg(34)%cptr = sedXdef
       fortdg(35)%key = "sed_equationY"; fortdg(35)%cptr => sed_equationY;  fortdg(35)%required = 0;  fortdg(35)%cptr = sedYdef
-      fortdg(36)%key = "rainfall";      fortdg(36)%iptr => rainfall; fortdg(36)%required = 0; fortdg(36)%iptr = 0
-      
+      fortdg(36)%key = "rainfall";      fortdg(36)%iptr => rainfall;       fortdg(36)%required = 0;  fortdg(36)%iptr = 0
+      fortdg(37)%key = "rtiminc";       fortdg(37)%rptr => rtiminc;        fortdg(37)%required = 0;  fortdg(37)%rptr = 3600.0
+      fortdg(38)%key = "rexneg";        fortdg(38)%iptr => rexneg;         fortdg(38)%required = 0;  fortdg(38)%iptr = 1
+      fortdg(39)%key = "rusemmhr";      fortdg(39)%iptr => rusemmhr;       fortdg(39)%required = 0;  fortdg(39)%iptr = 1
+
       !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       ! End configuration
       !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      
+
       nopt = 0
       ncheck = 0
       DO i = 1,maxopt
-      
+
         ! find and keep track of populated indicies
-        IF (fortdg(i)%key .ne. empty) THEN      
-          nopt = nopt + 1      
+        IF (fortdg(i)%key .ne. empty) THEN
+          nopt = nopt + 1
           fortdg_ind(nopt) = i
         ENDIF
-        
+
         ! determine target variable type by checking association status
-        fortdg(i)%vartype = 0    
-        
+        fortdg(i)%vartype = 0
+
         IF (ASSOCIATED(fortdg(i)%iptr)) THEN  ! integer
-          ncheck = ncheck + 1   
+          ncheck = ncheck + 1
           fortdg(i)%vartype = 1
         ENDIF
-        
+
         IF (ASSOCIATED(fortdg(i)%rptr)) THEN ! real
           ncheck = ncheck + 1
           fortdg(i)%vartype = 2
         ENDIF
-        
+
         IF (ASSOCIATED(fortdg(i)%cptr)) THEN ! character
-          ncheck = ncheck + 1        
-          fortdg(i)%vartype = 3        
+          ncheck = ncheck + 1
+          fortdg(i)%vartype = 3
         ENDIF
       ENDDO
-      
+
 !       PRINT*, "Number of options = ", nopt
 !       PRINT*, "Number of pointer associations = ", ncheck
-      
+
       ! ensure user has associated each keyword pointer
       IF (nopt /= ncheck) THEN
-        IF (myproc == 0) THEN 
+        IF (myproc == 0) THEN
           PRINT("(A)"), "*** ERROR: fort.dg option pointer association error ***"
           PRINT("(A)"), "           check keyword configuration in fort_dg_setup subroutine"
-        ENDIF 
-        
+        ENDIF
+
         STOP
       ENDIF
-          
-      
+
+
       RETURN
       END SUBROUTINE FORT_DG_SETUP
-      
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!            
-      
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
       END MODULE FORT_DG
