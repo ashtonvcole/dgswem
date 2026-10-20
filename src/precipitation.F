@@ -2,7 +2,7 @@ C***********************************************************************
 C
 C     SUBROUTINE PRECIPITATION( )
 C
-C     This subroutine reads the precipitation file and interpolates 
+C     This subroutine reads the precipitation file and interpolates
 C     over the mesh
 C
 C     Current version generates only uniform precipitation
@@ -39,9 +39,6 @@ C***********************************************************************
         N2 = NM(II,2)
         N3 = NM(II,3)
         SOURCE_R1 =  1.0/3.0*(PREC2(N1) + PREC2(N2) + PREC2(N3))
-        if (SOURCE_R1 .LT. 0.0) then
-           SOURCE_R1 = 0.0
-        ENDIF
       END FUNCTION
 
       pure function computeTRR_IPET(dist, LatestRmax, Pn, Pc) result(TRR)
@@ -53,10 +50,10 @@ C***********************************************************************
         real(sz), intent(in) :: LatestRmax
 
         IF (dist <= LatestRmax) THEN
-            TRR = ((1.14) + (0.12 * (Pn - Pc))) 
+            TRR = ((1.14) + (0.12 * (Pn - Pc)))
         ELSEIF (dist>LatestRmax) THEN
         IF (dist<500) THEN
-            TRR = 1.14 + 0.12 * (Pn - Pc) * (EXP(-0.3 * ((dist - LatestRmax) / LatestRmax))) 
+            TRR = 1.14 + 0.12 * (Pn - Pc) * (EXP(-0.3 * ((dist - LatestRmax) / LatestRmax)))
         ELSEIF (dist>500) THEN
             TRR = 0
         END IF
@@ -93,7 +90,7 @@ C***********************************************************************
         b3 = -13.0 !kilometers
         b4 = -16.0 !kilometers
 
-        ! Equations 
+        ! Equations
         NMW=(1.0 + ((Vmax-35.0)/33.0)) !normalized maximum wind
         T0=a1+(b1*NMW) ! rain rate at TC center r=0
         Tm=a2+(b2*NMW) !maximum rain rate
@@ -112,8 +109,8 @@ C***********************************************************************
 
         !convert inches/day-> m/sec
         TRR=TRR/3401568.0
-      
-      end function  
+
+      end function
 
 
       SUBROUTINE UPDATE_PREC(i, lat, lon, cLon, cLat, Pn, Pc, rmx, Vmax, model_type)
@@ -124,24 +121,24 @@ C***********************************************************************
         implicit none
         integer, intent(in) :: i, model_type
         real(sz), intent(in) :: lon, lat, cLon, cLat, Pn, Pc, rmx, Vmax
-        real(sz) :: dx, dy, dist, LatestRmax 
+        real(sz) :: dx, dy, dist, LatestRmax
 
         dx = deg2rad * Rearth * (lon - cLon) * COS(deg2rad*cLat)
         dy = deg2rad * Rearth * (lat - cLat)
         dist = SQRT(dx*dx + dy*dy)
 
         dist = dist / 1000.0  ! convert to km
-        
+
         LatestRmax = rmx*1.852  ! Assign the latest value of rmx to LatestRmax
 
-        
+
         SELECT CASE (model_type)
           CASE (3)  ! Use RCLIPER
           PREC2(i) = computeTRR_RCLIPER(dist, Vmax)
           CASE (4)  ! Use IPET
           PREC2(i) = computeTRR_IPET(dist,LatestRmax, Pn, Pc)
-            END SELECT  
-        
+            END SELECT
+
         IF (IRK == 1) THEN
             PREC3(i) = PREC3(i) + DTDP * PREC2(i)
         END IF

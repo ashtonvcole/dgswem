@@ -79,7 +79,7 @@ C.......Compute rain source term if rain is enabled
             IF (rainfall > 1) SOURCE_R = computeElemTRR(L)
             IF (rainfall == 1) SOURCE_R =  7.0556e-6 ! 1 inch/hour
 
-            IF (SOURCE_R .GT. 0.0) THEN
+            IF (SOURCE_R .NE. 0.0) THEN
 !$acc loop seq
               DO I = 1,NAGP(pa)
                 DO K = 1,DOFS(L)
