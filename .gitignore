@@ -8,7 +8,7 @@ dgswem
 dgswem_serial
 __pycache__
 .wraplock
-PE* 
+PE*
 *.16
 *.17
 *.4l
@@ -24,8 +24,10 @@ PE*
 *.88
 *.89
 *.63
+*.99
 metis_graph.txt
 maxele.63
 aps*
 .future.md
 sb1000*
+.gmtdefaults*
