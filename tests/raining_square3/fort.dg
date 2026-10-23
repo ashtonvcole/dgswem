@@ -1,0 +1,56 @@
+! dgswem fort.dg in keyword format, draining square case
+
+dgswe = 1
+dg_to_cg = 1
+modal_ic = 0
+
+! p enrichment options (fixed linear p)
+padapt = 0
+pflag = 2
+gflag = 1
+dis_tol = 8
+pl = 1
+ph = 1
+px = 1
+slimit = 0.00005
+plimit = 10
+k = 1
+ks = 0.5
+L = 2
+nelem = 3564104
+
+! flux option
+fluxtype = 1          ! 1=Roe
+
+! timestepping options
+rk_stage = 2
+rk_order = 2
+
+! hot start options
+dghot = 0
+dghotspool = 43200
+
+! slopelimiting options
+slopeflag = 5
+weight = 1
+
+! sediment options
+sedflag = 0
+porosity = 0.0001
+sevdm = 0.00001
+layers = 1
+sed_equationX = (ZE_ROE+bed_ROE)**-1 *QX_ROE
+sed_equationY = (ZE_ROE+bed_ROE)**-1 *QY_ROE
+
+! chemistry options
+rxn_rate = 1
+
+! artificial diffusion options
+artdif = 0
+kappa = -1.0
+s0 = 0.0
+uniform_dif = 2.5e-6
+tune_by_hand = 0
+
+! precipitation options
+rainfall = 1         ! Constant rainfall
