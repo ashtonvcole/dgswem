@@ -20,7 +20,7 @@ draining_square                          ! 24 CHARACTER ALPHANUMERIC RUN IDENTIF
 10.000000                                   ! DT - TIME STEP (IN SECONDS)
 0.00000                                  ! STATIM - STARTING SIMULATION TIME IN DAYS
 0.00000                                  ! REFTIME - REFERENCE TIME (IN DAYS)
-480.00000                             ! RNDAY - TOTAL LENGTH OF SIMULATION (IN DAYS)
+960.00000                             ! RNDAY - TOTAL LENGTH OF SIMULATION (IN DAYS)
 1.00000                                  ! DRAMP - DURATION OF RAMP FUNCTION (IN DAYS)
 0.800000 0.200000 0.000000               ! TIME WEIGHTING FACTORS FOR THE GWCE EQUATION
 0.100000 2 10 0.010000                   ! H0, NODEDRYMIN, NODEWETMIN, VELMIN
@@ -31,12 +31,12 @@ draining_square                          ! 24 CHARACTER ALPHANUMERIC RUN IDENTIF
 0                                        ! NTIF - NUMBER OF TIDAL POTENTIAL CONSTITUENTS
 0                                        ! NBFR - NUMBER OF PERIODIC FORCING FREQUENCIES (none)
 110                                      ! ANGINN - MINIMUM ANGLE FOR TANGENTIAL FLOW
-1 0.000000 480.000000 8640               ! NOUTE, TOUTSE, TOUTFE, NSPOOLE - FORT 61 OPTIONS
+1 0.000000 960.000000 8640               ! NOUTE, TOUTSE, TOUTFE, NSPOOLE - FORT 61 OPTIONS
 1                                        ! NSTAE - NUMBER OF ELEVATION RECORDING STATIONS
 -94.995 29.005                           ! Center of square (-95.0, -94.99) x (29.0, 29.01)
 0 0.000000 0.000000 0                    ! NOUTV, TOUTSV, TOUTFV, NSPOOLV - FORT 62 OPTIONS
 0                                        ! NSTAV - NUMBER OF VELOCITY RECORDING STATIONS
-1 0.000000 480.000000 8640               ! NOUTGE, TOUTSGE, TOUTFGE, NSPOOLGE - GLOBAL ELEVATION OUTPUT (fort.63)
+1 0.000000 960.000000 8640               ! NOUTGE, TOUTSGE, TOUTFGE, NSPOOLGE - GLOBAL ELEVATION OUTPUT (fort.63)
 0 0.000000 0.000000 0                    ! NOUTGV, TOUTSGV, TOUTFGV, NSPOOLGV - GLOBAL VELOCITY OUTPUT
 0                                        ! NHARF - NUMBER OF FREQUENCIES IN HARMONIC ANALYSIS
 0.000000 0.000000 0 0.000000             ! THAS, THAF, NHAINC, FMV - HARMONIC ANALYSIS PARAMETERS
